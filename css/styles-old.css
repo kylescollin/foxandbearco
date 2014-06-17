@@ -1,34 +1,43 @@
 /* Extra small devices (phones, less than 768px) */
 /* No media query since this is the default in Bootstrap */
 .hero {
-	background: url('../img/hero_small.jpg') center center;
+	background: url('../img/placeholder.jpg'); 
+	background-position: center top;
 	background-size: 100%;
 	-webkit-box-sizing: content-box;
 	-moz-box-sizing: content-box;
 	box-sizing: content-box;
 	color: white;
 	text-align: center;
-	padding: 55px 0px 65px 0px;
+	padding-top: 60px;
+	padding-bottom: 60px;
 }
 
 /* Small devices (tablets, 768px and up) */
-@media (min-width: 768px) {
+@media (min-width: @screen-sm-min) {
 	.hero {
-		background: url('../img/hero_large.jpg') center center;
-		padding: 135px 0px 145px 0px;
+		height: 0;
+		padding-top: 16.559%;
+		padding-bottom: 19.2%;
 	}
 }
 
 /* Medium devices (desktops, 992px and up) */
-@media (min-width: 992px) {
+@media (min-width: @screen-md-min) {
 	.hero {
-		padding: 160px 0px 170px 0px;
+		height: 0;
+		padding-top: 16.559%;
+		padding-bottom: 19.2%;
 	}
+
 }
 
 /* Large devices (large desktops, 1200px and up) */
-@media (min-width: 1200px) {
+@media (min-width: @screen-lg-min) {
 	.hero {
-		padding: 195px 0px 205px 0px;
+		height: 0;
+		padding-top: 16.559%;
+		padding-bottom: 19.2%;
 	}
+
 }
