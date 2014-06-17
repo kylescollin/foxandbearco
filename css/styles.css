@@ -1,5 +1,29 @@
 /* Extra small devices (phones, less than 768px) */
 /* No media query since this is the default in Bootstrap */
+@font-face {
+    font-family: 'BrandonBold';
+    src: url('../fonts/Brandon_bld.otf');
+}
+#header {
+	height: 200px;
+}
+.masthead-nav {
+	font-family: 'BrandonBold';
+	font-size: 20px;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+}
+.masthead-nav a {
+	color: #231f20;
+}
+.masthead-nav a:hover,
+.masthead-nav a:focus {
+	color: #8f8f8f;
+	background-color: transparent !important; 
+}
+.masthead-nav img {
+	height: 170px;
+}
 .hero {
 	background: url('../img/hero_small.jpg') center center;
 	background-size: 100%;
