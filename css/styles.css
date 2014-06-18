@@ -1,17 +1,121 @@
-/* Extra small devices (phones, less than 768px) */
-/* No media query since this is the default in Bootstrap */
+/* ===============================================================
+General CSS Reset 
+================================================================*/
+
+/**
+ * Eric Meyer's Reset CSS v2.0 (http://meyerweb.com/eric/tools/css/reset/)
+ * http://cssreset.com
+ */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/* ===============================================================
+Master Page Structure & Style
+================================================================*/
 @font-face {
     font-family: 'BrandonBold';
     src: url('../fonts/Brandon_bld.otf');
 }
+@font-face {
+    font-family: 'ClarendonLight';
+    src: url('../fonts/ClarendonLTStd-Light.otf');
+}
+
+body {
+	background-color: #fff;
+	color: #231f20;
+	font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
+	font-weight: 300;
+	font-size: 12px;
+	line-height: 16px;
+	letter-spacing: 0.0625em;
+}
+
+a {
+	text-decoration: none;
+}
+
+header,
+footer {
+	display: block;
+}
+
+.container {
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+}
+@media (min-width: 768px) {
+	.container {
+		width: 750px;
+	}
+}
+@media (min-width: 992px) {
+	.container {
+		width: 970px;
+	}
+}
+@media (min-width: 1200px) {
+	.container {
+		width: 1170px;
+	}
+}
+
+/* ===============================================================
+Navigation
+================================================================*/
 #header {
 	height: 200px;
 }
+
 .masthead-nav {
 	font-family: 'BrandonBold';
 	font-size: 20px;
 	text-transform: uppercase;
 	letter-spacing: 2px;
+	text-align: center;
 }
 .masthead-nav a {
 	color: #231f20;
@@ -19,40 +123,85 @@
 .masthead-nav a:hover,
 .masthead-nav a:focus {
 	color: #8f8f8f;
-	background-color: transparent !important; 
 }
-.masthead-nav img {
-	height: 170px;
+.masthead-nav li {
+	display: none;
 }
+@media (min-width: 768px) {
+	.masthead-nav li {
+		display: block;
+		float: left;
+		width: 20%;
+		vertical-align: middle;
+		line-height: 200px;
+	}
+}
+#logo {
+	line-height: 0px;
+	padding-top: 15px;
+	padding-bottom: 15px;
+}
+#logo img {
+	height: 140px;
+}
+@media (min-width: 768px) {
+	#logo {
+		height: 170px;
+		display: block;
+	}
+}
+/* ===============================================================
+Hero Section
+================================================================*/
 .hero {
 	background: url('../img/hero_small.jpg') center center;
 	background-size: 100%;
-	-webkit-box-sizing: content-box;
-	-moz-box-sizing: content-box;
-	box-sizing: content-box;
+	padding: 55px 0px 65px 0px;
 	color: white;
 	text-align: center;
-	padding: 55px 0px 65px 0px;
+	font-family: 'ClarendonLight';
+	font-size: 30px;
 }
-
-/* Small devices (tablets, 768px and up) */
 @media (min-width: 768px) {
 	.hero {
 		background: url('../img/hero_large.jpg') center center;
 		padding: 135px 0px 145px 0px;
 	}
 }
-
-/* Medium devices (desktops, 992px and up) */
 @media (min-width: 992px) {
 	.hero {
 		padding: 160px 0px 170px 0px;
 	}
 }
-
-/* Large devices (large desktops, 1200px and up) */
 @media (min-width: 1200px) {
 	.hero {
 		padding: 195px 0px 205px 0px;
 	}
+}
+
+/* ===============================================================
+Product Gallery
+================================================================*/
+
+.row {
+	margin-right: -15px;
+	margin-left: -15px;
+	clear: both;
+}
+.column {
+	position: relative;
+	min-height: 1px;
+	margin: 20px;
+}
+@media (min-width: 992px) {
+	.column {
+		float: left;
+		width: 30%;
+		margin: 20px 1.5% 20px 1.5%;
+	}
+}
+h2 {
+	font-family: 'ClarendonLight';
+	font-size: 20px;
+	margin-bottom: 10px;
 }
