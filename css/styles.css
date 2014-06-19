@@ -145,7 +145,7 @@ Navigation
 .logo {
 	position: absolute;
 	left: 50%;
-	margin: -76px 0 0 -108px;
+	margin: -76px 0 0 -89px;
 }
 .logo img {
 	height: 170px;
@@ -156,7 +156,7 @@ Hero Section
 .hero {
 	background: url('../img/hero_small.jpg') center center;
 	background-size: 100%;
-	padding: 55px 0px 65px 0px;
+	padding: 70px 0px 80px 0px;
 	color: white;
 	text-align: center;
 	font-family: 'ClarendonLight';
@@ -193,7 +193,10 @@ Product Gallery
 	min-height: 1px;
 	margin: 20px;
 }
-@media (min-width: 992px) {
+.column img {
+	width: 100%;
+}
+@media (min-width: 768px) {
 	.column {
 		float: left;
 		width: 30%;
@@ -203,7 +206,7 @@ Product Gallery
 h2 {
 	font-family: 'ClarendonLight';
 	font-size: 20px;
-	margin: 10px 0 10px 0;
+	margin: 20px 0 10px 0;
 }
 .btn {
 	margin: 5px auto 5px auto;
@@ -212,4 +215,33 @@ h2 {
 	padding: 6px 12px;
 	border: 1px solid #ccc;
 	border-radius: 4px;
+}
+
+/* ===============================================================
+Footer
+================================================================*/
+footer {
+	background-size: 100%;
+	background-color: #231f20;
+	padding: 70px 0px 80px 0px;
+	color: white;
+	text-align: center;
+	font-family: 'ClarendonLight';
+	font-size: 24px;
+	clear: both;
+}
+@media (min-width: 768px) {
+	footer {
+
+	}
+}
+@media (min-width: 992px) {
+	footer {
+
+	}
+}
+@media (min-width: 1200px) {
+	footer {
+
+	}
 }
