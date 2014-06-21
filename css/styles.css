@@ -86,6 +86,7 @@ footer {
   padding-left: 15px;
   margin-right: auto;
   margin-left: auto;
+  overflow: auto;
 }
 @media (min-width: 768px) {
 	.container {
@@ -101,6 +102,28 @@ footer {
 	.container {
 		width: 1170px;
 	}
+}
+h1 {
+	color: white;
+	text-align: center;
+	font-family: 'ClarendonLight';
+	font-size: 30px;
+	line-height: 35px;
+}
+h2 {
+	font-family: 'BrandonBold';
+	font-size: 20px;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+	text-align: center;
+	margin: 20px;
+}
+hr {
+	width: 40px;
+	background-color: #000;
+	height: 1px;
+	border: 0px;
+	margin-bottom: 25px;
 }
 
 /* ===============================================================
@@ -154,18 +177,25 @@ Navigation
 Hero Section
 ================================================================*/
 .hero {
-	background: url('../img/hero_small.jpg') center center;
 	background-size: 100%;
-	padding: 70px 0px 80px 0px;
-	color: white;
-	text-align: center;
-	font-family: 'ClarendonLight';
-	font-size: 30px;
+	padding: 65px 0px 70px 0px;
+	margin-bottom: 20px;
+}
+#herohome {
+	background: url('../img/herohome_small.jpg') center center;
+}
+#heroabout {
+	background: url('../img/heroabout_small.jpg') center center;
 }
 @media (min-width: 768px) {
 	.hero {
-		background: url('../img/hero_large.jpg') center center;
 		padding: 135px 0px 145px 0px;
+	}
+	#herohome {
+		background: url('../img/herohome_large.jpg') center center;
+	}
+	#heroabout {
+		background: url('../img/heroabout_large.jpg') center center;
 	}
 }
 @media (min-width: 992px) {
@@ -188,25 +218,31 @@ Product Gallery
 	margin-left: -15px;
 	clear: both;
 }
-.column {
+.column-3 {
 	position: relative;
 	min-height: 1px;
 	margin: 20px;
 }
-.column img {
+.column-3 img {
 	width: 100%;
 }
 @media (min-width: 768px) {
-	.column {
+	.column-3 {
 		float: left;
 		width: 30%;
 		margin: 20px 1.5% 20px 1.5%;
 	}
 }
-h2 {
+h3 {
 	font-family: 'ClarendonLight';
 	font-size: 20px;
-	margin: 20px 0 10px 0;
+	margin: 18px 0 10px 0;
+	line-height: 25px;
+	float: left;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	width: 80%;
 }
 .btn {
 	margin: 5px auto 5px auto;
@@ -216,6 +252,14 @@ h2 {
 	border: 1px solid #ccc;
 	border-radius: 4px;
 }
+.price {
+	float: right;
+	margin: 18px 0 10px 0;
+	font-size: 16px;
+}
+p {
+	clear: both;
+}
 
 /* ===============================================================
 Footer
@@ -223,25 +267,65 @@ Footer
 footer {
 	background-size: 100%;
 	background-color: #231f20;
-	padding: 70px 0px 80px 0px;
 	color: white;
 	text-align: center;
+	clear: both;
+	margin-top: 30px;
+}
+footer hr{
+	background-color: #fff;
+}
+footer a {
+	color: #fff;
+}
+footer a:hover,
+footer a:focus {
+	color: #ddd;
+	border-bottom: 1px solid #8f8f8f;
+}
+.column-2 {
+	position: relative;
+	line-height: 40px;
+	margin: 0px 20px 0px 20px;
+	padding: 30px 0px 30px 0px;
 	font-family: 'ClarendonLight';
 	font-size: 24px;
-	clear: both;
 }
 @media (min-width: 768px) {
-	footer {
-
+	.column-2 {
+		float: left;
+		width: 50%;
+		margin: 30px 0px 30px 0px;
+		padding: 0px;
 	}
 }
-@media (min-width: 992px) {
-	footer {
-
+#stroked {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	border-bottom: 1px solid #fff; 
+}
+@media (min-width: 768px) {
+	#stroked {
+		border-bottom: none;
+		border-right: 1px solid #fff;
 	}
 }
-@media (min-width: 1200px) {
-	footer {
-
+.socialmedia {
+	width: 75px;
+	height: 75px;
+	margin-top: 20px;
+}
+@media (min-width: 768px) {
+	.socialmedia {
+		width: 90px;
+		height: 90px;
+		margin-top: 20px;
 	}
+}
+#legal {
+	clear: both;
+	width: 100%;
+	font-size: 12px;
+	margin-bottom: 30px;
 }
