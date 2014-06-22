@@ -187,6 +187,9 @@ Hero Section
 #heroabout {
 	background: url('../img/heroabout_small.jpg') center center;
 }
+#herocontact {
+	background: url('../img/herocontact_small.jpg') center center;
+}
 @media (min-width: 768px) {
 	.hero {
 		padding: 135px 0px 145px 0px;
@@ -196,6 +199,9 @@ Hero Section
 	}
 	#heroabout {
 		background: url('../img/heroabout_large.jpg') center center;
+	}
+	#herocontact {
+		background: url('../img/herocontact_large.jpg') center center;
 	}
 }
 @media (min-width: 992px) {
@@ -259,6 +265,59 @@ h3 {
 }
 p {
 	clear: both;
+}
+
+/* ===============================================================
+Contact Us
+================================================================*/
+form {
+	text-align: center;
+	width: 80%;
+	margin: 0 auto;
+}
+.shortfield {
+	width: 90.6%;
+	margin: 2%;
+	float: center;
+	height: 40px;
+	padding: 12px 10px 5px 14px;
+	font-family: 'ClarendonLight';
+	font-size: 20px;
+	line-height: 25px;
+	display: inline-block;
+	border: 1px solid #bbb;
+}
+@media (min-width: 768px) {
+	.shortfield {
+		width: 41.7%;
+		margin: 1.5%;
+	}
+}
+.longfield {
+	width: 91%;
+	margin: 2%;
+	height: 200px;
+	padding: 10px 10px 5px 14px;
+	font-family: 'ClarendonLight';
+	font-size: 20px;
+	line-height: 25px;
+	resize: none;
+	border: 1px solid #bbb;
+}
+.submitbutton {
+	background-color: #319569;
+	width: 300px;
+	height: 45px;
+	font-family: 'BrandonBold';
+	font-size: 20px;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+	text-align: center;
+	border:  0px;
+	color: #fff;
+}
+.redherring {
+	display: none;
 }
 
 /* ===============================================================

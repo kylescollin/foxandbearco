@@ -21,31 +21,31 @@
                 <a class="logo" href="index.html"><img src="img/logo.svg" alt="Fox And Bear Co." /></a>
                 <ul class="masthead-nav">
                     <li><a href="index.html">Home</a></li>
-                    <li class="active"><a href="about.html">About</a></li>
-                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li class="active"><a href="contact.html">Contact</a></li>
                     <li><a href="#">Blog</a></li>
                 </ul>
             </div>
         </header>
 
         <!-- Main hero graphic -->
-        <div id="heroabout" class="hero">
+        <div id="herocontact" class="hero">
             <div class="container">
                 <h1>Brooklyn, NY</h1>
             </div>
         </div>
 
+
         <div class="container">
-            <h2>About Us</h2>
+            <h2>Contact Us</h2>
             <hr>
-            <div class="row">
-                <div class="column-2">
-                    This is some text
-                </div>
-                <div class="column-2">
-                    This is some text
-                </div>
-            </div>
+            <form method="post" action="contactengine.php">
+                <input type="text" name="Name" placeholder="Contact Name" class="shortfield" />
+                <input type="text" name="Email" placeholder="Email Address" class="shortfield" />
+                <input type="text" name="RedHerring" class="redherring">
+                <textarea name="Message" rows="20" cols="20" placeholder="Questions or Comments..." class="longfield"></textarea>
+                <input type="submit" name="Submit" value="Send Message" class="submitbutton" />
+            </form>
         </div>
 
         <footer>
