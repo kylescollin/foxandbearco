@@ -12,6 +12,8 @@
         <link rel="shortcut icon" href="ico/favicon.ico">
 
         <title>Fox &amp; Bear Co.</title>
+        <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+        <script type="text/javascript" src="js/scripts.js"></script>
         <link href="css/styles.css" rel="stylesheet">
     </head>
 
@@ -39,13 +41,14 @@
         <div class="container">
             <h2>Contact Us</h2>
             <hr>
-            <form method="post" action="contactengine.php">
-                <input type="text" name="Name" placeholder="Contact Name" class="shortfield" />
-                <input type="text" name="Email" placeholder="Email Address" class="shortfield" />
-                <input type="text" name="RedHerring" class="redherring">
-                <textarea name="Message" rows="20" cols="20" placeholder="Questions or Comments..." class="longfield"></textarea>
-                <input type="submit" name="Submit" value="Send Message" class="submitbutton" />
-            </form>
+            <div id="alert"></div>
+            <fieldset id="contactform">
+                <input type="text" name="name" placeholder="Full Name" class="shortfield" />
+                <input type="email" name="email" placeholder="Email Address" class="shortfield" />
+                <input type="text" name="phone" class="redherring"><!--BotKill-->
+                <textarea name="message" rows="20" cols="20" placeholder="Questions or Comments..." class="longfield"></textarea>
+                <button id="submitbutton" />Send Message</button>
+            </fieldset>
         </div>
 
         <footer>

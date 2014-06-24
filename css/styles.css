@@ -75,6 +75,10 @@ body {
 a {
 	text-decoration: none;
 }
+a:hover div,
+a:focus div {
+	text-decoration: underline;
+}
 
 header,
 footer {
@@ -130,29 +134,27 @@ hr {
 Navigation
 ================================================================*/
 #header {
-	height: 20px;
+	height: 40px;
 	position: relative;
-	margin: 80px auto 80px;
-	padding: 20px 0 20px 0;
+	margin: 70px auto 60px;
+	padding: 30px 0 20px 0;
 	font-family: 'BrandonBold';
 	font-size: 20px;
+	line-height: 22px;
 	text-transform: uppercase;
 	letter-spacing: 2px;
 	text-align: center;
 }
-#header ul {
-
-}
 #header a {
 	color: #231f20;
+}
+#header li {
+	display: none;
 }
 #header ul a:hover,
 #header ul a:focus {
 	color: #8f8f8f;
-	border-bottom: 1px solid #8f8f8f;
-}
-#header li {
-	display: none;
+	text-decoration: underline;
 }
 @media (min-width: 768px) {
 	#header li {
@@ -223,6 +225,9 @@ Product Gallery
 	margin-right: -15px;
 	margin-left: -15px;
 	clear: both;
+	font-family: 'ClarendonLight';
+	font-size: 20px;
+	line-height: 25px;
 }
 .column-3 {
 	position: relative;
@@ -231,6 +236,7 @@ Product Gallery
 }
 .column-3 img {
 	width: 100%;
+	margin-bottom: 18px;
 }
 @media (min-width: 768px) {
 	.column-3 {
@@ -239,38 +245,36 @@ Product Gallery
 		margin: 20px 1.5% 20px 1.5%;
 	}
 }
-h3 {
-	font-family: 'ClarendonLight';
-	font-size: 20px;
-	margin: 18px 0 10px 0;
-	line-height: 25px;
+.productname {
 	float: left;
-	overflow: hidden;
-	white-space: nowrap;
-	text-overflow: ellipsis;
-	width: 80%;
-}
-.btn {
-	margin: 5px auto 5px auto;
-	font-size: 14px;
-	display: inline-block;
-	padding: 6px 12px;
-	border: 1px solid #ccc;
-	border-radius: 4px;
+	width: 85%;
+	color: #231f20;
 }
 .price {
 	float: right;
-	margin: 18px 0 10px 0;
+	font-family: 'ClarendonLight';
 	font-size: 16px;
+	line-height: 27px;
+	color: #fff;
+	width: 45px;
+	height: 25px;
+	padding: 10px 0px 10px 0px;
+	border-radius: 50%;
+	text-align: center;
+	background-color: #231f20;
 }
-p {
-	clear: both;
+.super {
+	vertical-align: middle;
+	font-size: 11px;
 }
 
 /* ===============================================================
 Contact Us
 ================================================================*/
-form {
+input:-webkit-autofill {
+	-webkit-box-shadow: 0 0 0 1000px white inset;
+}
+fieldset {
 	text-align: center;
 	width: 80%;
 	margin: 0 auto;
@@ -304,10 +308,12 @@ form {
 	resize: none;
 	border: 1px solid #bbb;
 }
-.submitbutton {
+#submitbutton {
 	background-color: #319569;
 	width: 300px;
-	height: 45px;
+	height: 50px;
+	padding-top: 6px;
+	margin-bottom: 5px;
 	font-family: 'BrandonBold';
 	font-size: 20px;
 	text-transform: uppercase;
@@ -316,8 +322,32 @@ form {
 	border:  0px;
 	color: #fff;
 }
+#submitbutton img {
+	width: 21px;
+	height: 21px;
+	padding-bottom: 6px;
+	margin-right: 15px;
+	vertical-align: middle;
+}
 .redherring {
 	display: none;
+}
+#alert {
+	display: none;
+	margin: 0 auto;
+	width: 400px;
+	text-align: center;
+	font-size: 14px;
+	margin-bottom: 20px;
+}
+.error {
+	color: #fff;
+	background-color: #e64d43;
+	height: 30px;
+	padding-top: 12px;
+	border-radius: 3px;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
 }
 
 /* ===============================================================
