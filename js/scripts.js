@@ -37,13 +37,12 @@ $(document).ready(function() {
             $("#alert").html(output).slideDown();
             proceed = false;
         }
-
         if(user_message=="" && proceed==true) {  
             $('textarea[name=message]').css('border-color','red');
-            output = '<div class="error">Please fill out the questions/comments field.</div>';
+            output = '<div class="error">Please send us a message!</div>';
             $("#alert").html(output).slideDown();
             proceed = false;
-        } else if(user_message.length < 5 && process==true) {
+        } else if(user_message.length < 5 && proceed==true) {
             $('textarea[name=message]').css('border-color','red');
             output = '<div class="error">Message too short! Please enter something.</div>';
             $("#alert").html(output).slideDown();

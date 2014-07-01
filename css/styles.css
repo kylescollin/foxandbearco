@@ -1,7 +1,19 @@
+/*
+Title: Fox & Bear Co.
+Author: Kyle Scollin
+URL: www.foxandbearco.com
+
+background: #fff;
+normal text: #231f20
+link rollover: #8f8f8f
+buttons: #319569
+error: #e64d43
+
+*/
+
 /* ===============================================================
 General CSS Reset 
 ================================================================*/
-
 /**
  * Eric Meyer's Reset CSS v2.0 (http://meyerweb.com/eric/tools/css/reset/)
  * http://cssreset.com
@@ -61,7 +73,6 @@ Master Page Structure & Style
     font-family: 'ClarendonLight';
     src: url('../fonts/ClarendonLTStd-Light.otf');
 }
-
 body {
 	background-color: #fff;
 	color: #231f20;
@@ -71,20 +82,19 @@ body {
 	line-height: 16px;
 	letter-spacing: 0.0625em;
 }
-
 a {
 	text-decoration: none;
+	color: #231f20;
 }
-a:hover div,
-a:focus div {
+a:hover,
+a:focus {
 	text-decoration: underline;
+	color: #8f8f8f;
 }
-
 header,
 footer {
 	display: block;
 }
-
 .container {
   padding-right: 15px;
   padding-left: 15px;
@@ -108,7 +118,7 @@ footer {
 	}
 }
 h1 {
-	color: white;
+	color: #fff;
 	text-align: center;
 	font-family: 'ClarendonLight';
 	font-size: 30px;
@@ -124,7 +134,7 @@ h2 {
 }
 hr {
 	width: 40px;
-	background-color: #000;
+	background-color: #231f20;
 	height: 1px;
 	border: 0px;
 	margin-bottom: 25px;
@@ -136,8 +146,8 @@ Navigation
 #header {
 	height: 40px;
 	position: relative;
-	margin: 70px auto 60px;
-	padding: 30px 0 20px 0;
+	margin: 70px auto 60px auto;
+	padding: 30px 0px 20px 0px;
 	font-family: 'BrandonBold';
 	font-size: 20px;
 	line-height: 22px;
@@ -145,16 +155,8 @@ Navigation
 	letter-spacing: 2px;
 	text-align: center;
 }
-#header a {
-	color: #231f20;
-}
 #header li {
 	display: none;
-}
-#header ul a:hover,
-#header ul a:focus {
-	color: #8f8f8f;
-	text-decoration: underline;
 }
 @media (min-width: 768px) {
 	#header li {
@@ -289,7 +291,7 @@ fieldset {
 	font-size: 20px;
 	line-height: 25px;
 	display: inline-block;
-	border: 1px solid #bbb;
+	border: 1px solid #231f20;
 }
 @media (min-width: 768px) {
 	.shortfield {
@@ -306,7 +308,7 @@ fieldset {
 	font-size: 20px;
 	line-height: 25px;
 	resize: none;
-	border: 1px solid #bbb;
+	border: 1px solid #231f20;
 }
 #submitbutton {
 	background-color: #319569;
@@ -366,11 +368,6 @@ footer hr{
 }
 footer a {
 	color: #fff;
-}
-footer a:hover,
-footer a:focus {
-	color: #ddd;
-	border-bottom: 1px solid #8f8f8f;
 }
 .column-2 {
 	position: relative;

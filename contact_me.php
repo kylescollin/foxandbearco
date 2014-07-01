@@ -18,7 +18,7 @@ if($_POST)
 	//Sanitize input data using PHP filter_var().
 	$user_Name        = filter_var($_POST["userName"], FILTER_SANITIZE_STRING);
 	$user_Email       = filter_var($_POST["userEmail"], FILTER_SANITIZE_EMAIL);
-	$user_Message     = filter_var($_POST["userMessage"], FILTER_SANITIZE_STRING);
+	$user_Message     = strip_tags($_POST["userMessage"]);
 	
 	//additional php validation
 	if(strlen($user_Name)<3) { // If length is less than 4 it will throw an HTTP error.
