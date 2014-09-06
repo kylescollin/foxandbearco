@@ -2,416 +2,194 @@
 Title: Fox & Bear Co.
 Author: Kyle Scollin
 URL: www.foxandbearco.com
-
-background: #fff;
-normal text: #231f20
-link rollover: #8f8f8f
-buttons: #319569
-error: #e64d43
-
 */
-
-/* ===============================================================
-General CSS Reset 
-================================================================*/
-/**
- * Eric Meyer's Reset CSS v2.0 (http://meyerweb.com/eric/tools/css/reset/)
- * http://cssreset.com
- */
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed,
-figure, figcaption, footer, header, hgroup,
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	font-size: 100%;
-	font: inherit;
-	vertical-align: baseline;
-}
-/* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure,
-footer, header, hgroup, menu, nav, section {
-	display: block;
-}
-body {
-	line-height: 1;
-}
-ol, ul {
-	list-style: none;
-}
-blockquote, q {
-	quotes: none;
-}
-blockquote:before, blockquote:after,
-q:before, q:after {
-	content: '';
-	content: none;
-}
-table {
-	border-collapse: collapse;
-	border-spacing: 0;
-}
 
 /* ===============================================================
 Master Page Structure & Style
 ================================================================*/
 @font-face {
-    font-family: 'BrandonBold';
-    src: url('../fonts/Brandon_bld.otf');
+    font-family: 'HoeflerTextItalic';
+    src: url('../fonts/HoeflerText-Italic-SmallCaps.otf');
 }
 @font-face {
-    font-family: 'ClarendonLight';
-    src: url('../fonts/ClarendonLTStd-Light.otf');
+    font-family: 'HoeflerTextAlt';
+    src: url('../fonts/HoeflerText-Roman-Alt.otf');
 }
-body {
-	background-color: #fff;
-	color: #231f20;
-	font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
-	font-weight: 300;
-	font-size: 12px;
-	line-height: 16px;
-	letter-spacing: 0.0625em;
+@font-face {
+    font-family: 'HoeflerTextRoman';
+    src: url('../fonts/HoeflerText-Roman.otf');
 }
-a {
-	text-decoration: none;
-	color: #231f20;
-}
-a:hover,
-a:focus {
-	text-decoration: underline;
-	color: #8f8f8f;
-}
-header,
-footer {
-	display: block;
-}
-.container {
-  padding-right: 15px;
-  padding-left: 15px;
-  margin-right: auto;
-  margin-left: auto;
-  overflow: auto;
-}
-@media (min-width: 768px) {
-	.container {
-		width: 750px;
-	}
-}
-@media (min-width: 992px) {
-	.container {
-		width: 970px;
-	}
-}
-@media (min-width: 1200px) {
-	.container {
-		width: 1170px;
-	}
-}
-h1 {
-	color: #fff;
-	text-align: center;
-	font-family: 'ClarendonLight';
-	font-size: 30px;
-	line-height: 35px;
-}
-h2 {
-	font-family: 'BrandonBold';
-	font-size: 20px;
-	text-transform: uppercase;
-	letter-spacing: 2px;
-	text-align: center;
-	margin: 20px;
-}
-hr {
-	width: 40px;
-	background-color: #231f20;
-	height: 1px;
-	border: 0px;
-	margin-bottom: 25px;
+@font-face {
+    font-family: 'BrandonMedium';
+    src: url('../fonts/Brandon_med.otf');
 }
 
 /* ===============================================================
 Navigation
 ================================================================*/
-#header {
-	height: 40px;
-	position: relative;
-	margin: 70px auto 60px auto;
-	padding: 30px 0px 20px 0px;
-	font-family: 'BrandonBold';
-	font-size: 20px;
-	line-height: 22px;
-	text-transform: uppercase;
-	letter-spacing: 2px;
-	text-align: center;
-}
-#header li {
-	display: none;
-}
-@media (min-width: 768px) {
-	#header li {
-		display: block;
-		float: left;
-		width: 20%;
-	}
-	#header ul li:nth-of-type(3) {
-		margin-left: 19%;
-	}
-}
 
-.logo {
+#logo {
 	position: absolute;
-	left: 50%;
-	margin: -76px 0 0 -89px;
-}
-.logo img {
-	height: 170px;
-}
-/* ===============================================================
-Hero Section
-================================================================*/
-.hero {
-	background-size: 100%;
-	padding: 65px 0px 70px 0px;
-	margin-bottom: 20px;
-}
-#herohome {
-	background: url('../img/herohome_small.jpg') center center;
-}
-#heroabout {
-	background: url('../img/heroabout_small.jpg') center center;
-}
-#herocontact {
-	background: url('../img/herocontact_small.jpg') center center;
-}
-@media (min-width: 768px) {
-	.hero {
-		padding: 135px 0px 145px 0px;
-	}
-	#herohome {
-		background: url('../img/herohome_large.jpg') center center;
-	}
-	#heroabout {
-		background: url('../img/heroabout_large.jpg') center center;
-	}
-	#herocontact {
-		background: url('../img/herocontact_large.jpg') center center;
-	}
-}
-@media (min-width: 992px) {
-	.hero {
-		padding: 160px 0px 170px 0px;
-	}
-}
-@media (min-width: 1200px) {
-	.hero {
-		padding: 195px 0px 205px 0px;
-	}
-}
-
-/* ===============================================================
-Product Gallery
-================================================================*/
-
-.row {
-	margin-right: -15px;
-	margin-left: -15px;
-	clear: both;
-	font-family: 'ClarendonLight';
-	font-size: 20px;
-	line-height: 25px;
-}
-.column-3 {
-	position: relative;
-	min-height: 1px;
-	margin: 20px;
-}
-.column-3 img {
-	width: 100%;
-	margin-bottom: 18px;
-}
-@media (min-width: 768px) {
-	.column-3 {
-		float: left;
-		width: 30%;
-		margin: 20px 1.5% 20px 1.5%;
-	}
-}
-.productname {
-	float: left;
-	width: 85%;
-	color: #231f20;
-}
-.price {
-	float: right;
-	font-family: 'ClarendonLight';
-	font-size: 16px;
-	line-height: 27px;
-	color: #fff;
-	width: 45px;
-	height: 25px;
-	padding: 10px 0px 10px 0px;
-	border-radius: 50%;
-	text-align: center;
-	background-color: #231f20;
-}
-.super {
-	vertical-align: middle;
-	font-size: 11px;
-}
-
-/* ===============================================================
-Contact Us
-================================================================*/
-input:-webkit-autofill {
-	-webkit-box-shadow: 0 0 0 1000px white inset;
-}
-fieldset {
-	text-align: center;
-	width: 80%;
+	z-index: 1;
+	top: 1.7em;
+	left: 0;
 	margin: 0 auto;
+	width: 100%
 }
-.shortfield {
-	width: 90.6%;
-	margin: 2%;
-	float: center;
-	height: 40px;
-	padding: 12px 10px 5px 14px;
-	font-family: 'ClarendonLight';
-	font-size: 20px;
-	line-height: 25px;
-	display: inline-block;
-	border: 1px solid #231f20;
+#logo img {
+	width: 150px;
 }
-@media (min-width: 768px) {
-	.shortfield {
-		width: 41.7%;
-		margin: 1.5%;
-	}
-}
-.longfield {
-	width: 91%;
-	margin: 2%;
-	height: 200px;
-	padding: 10px 10px 5px 14px;
-	font-family: 'ClarendonLight';
-	font-size: 20px;
-	line-height: 25px;
-	resize: none;
-	border: 1px solid #231f20;
-}
-#submitbutton {
-	background-color: #319569;
-	width: 300px;
-	height: 50px;
-	padding-top: 6px;
-	margin-bottom: 5px;
-	font-family: 'BrandonBold';
-	font-size: 20px;
+#nav {
+	display: none;
+	font-family: "BrandonMedium";
 	text-transform: uppercase;
+	font-size: 14pt;
 	letter-spacing: 2px;
 	text-align: center;
-	border:  0px;
+	position: absolute;
+	top: 1.5em;
+	left: 0;
+	width: 100%;
+	height: 5em;
+}
+#nav > ul {
+	margin: 0;
+}
+#nav > ul > li {
+	display: inline-block;
+	margin: 0;
+}
+#nav > ul > li > a {
 	color: #fff;
+	text-decoration: none;
+	padding: 0.3em 1em 0.3em 1em;
 }
-#submitbutton img {
-	width: 21px;
-	height: 21px;
-	padding-bottom: 6px;
-	margin-right: 15px;
-	vertical-align: middle;
-}
-.redherring {
-	display: none;
-}
-#alert {
-	display: none;
-	margin: 0 auto;
-	width: 400px;
-	text-align: center;
-	font-size: 14px;
-	margin-bottom: 20px;
-}
-.error {
-	color: #fff;
-	background-color: #e64d43;
-	height: 30px;
-	padding-top: 12px;
-	border-radius: 3px;
-	-moz-border-radius: 3px;
-	-webkit-border-radius: 3px;
+#nav > ul > li.break {
+	margin-left: 18em;
 }
 
 /* ===============================================================
-Footer
+Homepage Intro
 ================================================================*/
-footer {
-	background-size: 100%;
-	background-color: #231f20;
-	color: white;
+
+#intro {
+	position: relative;
+	margin: 0;
+	background-image: url('../images/header.jpg');
+	background-size: cover;
+	background-position: center center;
+	background-repeat: no-repeat;
+	padding: 6em 20px 4em 20px;
 	text-align: center;
-	clear: both;
-	margin-top: 30px;
-}
-footer hr{
-	background-color: #fff;
-}
-footer a {
 	color: #fff;
 }
-.column-2 {
-	position: relative;
-	line-height: 40px;
-	margin: 0px 20px 0px 20px;
-	padding: 30px 0px 30px 0px;
-	font-family: 'ClarendonLight';
-	font-size: 24px;
+
+#intro header {
+	margin: 0 auto;
+	width: 90%;
 }
+#intro header img {
+	margin-top: 1em;
+	width: 80px;
+}
+#intro header h1 {
+	font-family: "HoeflerTextItalic";
+	font-size: 28pt;
+	margin-top: 1em;
+}
+#intro header h1 span {
+	font-family: "HoeflerTextAlt";
+	font-size: 28pt;
+}
+#intro header p {
+	font-family: "HoeflerTextRoman";
+	font-size: 12pt;
+	line-height: 1.5em;
+	margin-top: 2em;
+}
+#intro footer {
+	font-family: "BrandonMedium";
+	text-transform: uppercase;
+	letter-spacing: 2px;
+	font-size: 14pt;
+	margin: 2em auto;
+	border: 1px solid;
+	width: 250px;
+	height: 3em;
+	line-height: 3em;
+}
+#intro footer a {
+	color: #fff;
+	text-decoration: none;
+}
+
+
+
 @media (min-width: 768px) {
-	.column-2 {
-		float: left;
-		width: 50%;
-		margin: 30px 0px 30px 0px;
-		padding: 0px;
-	}
+#logo img {
+	width: 200px;
 }
-#stroked {
-	-webkit-box-sizing: border-box;
-	-moz-box-sizing: border-box;
-	box-sizing: border-box;
-	border-bottom: 1px solid #fff; 
+#nav {
+	display: inline;
+	line-height: 4em;
 }
-@media (min-width: 768px) {
-	#stroked {
-		border-bottom: none;
-		border-right: 1px solid #fff;
-	}
+#nav > ul > li.break {
+	margin-left: 12em;
 }
-.socialmedia {
-	width: 75px;
-	height: 75px;
-	margin-top: 20px;
+#intro {
+	padding: 12em 0 12em 0;
 }
-@media (min-width: 768px) {
-	.socialmedia {
-		width: 90px;
-		height: 90px;
-		margin-top: 20px;
-	}
+#intro header {
+	width: 70%;
 }
-#legal {
-	clear: both;
-	width: 100%;
-	font-size: 12px;
-	margin-bottom: 30px;
+#intro header img {
+	width: 152px;
+}
+#intro header h1 {
+	font-family: "HoeflerTextItalic";
+	font-size: 36pt;
+	margin-top: 1em;
+}
+#intro header h1 span {
+	font-family: "HoeflerTextAlt";
+	font-size: 36pt;
+}
+#intro header p {
+	font-family: "HoeflerTextRoman";
+	font-size: 14pt;
+	line-height: 2em;
+	margin-top: 2em;
+}
+}
+
+@media (min-width: 992px) {
+#logo img {
+	width: 248px;
+}
+#nav {
+	line-height: 5em;
+}
+#nav > ul > li.break {
+	margin-left: 18em;
+}
+#intro {
+	padding: 14em 0 14em 0;
+}
+#intro header {
+	width: 60%;
+}
+}
+
+@media (min-width: 1200px) {
+#nav > ul > li {
+	display: inline-block;
+	margin: 0 2em 0 2em;
+}
+#intro {
+	padding: 14em 0 14em 0;
+}
+#intro header {
+	width: 55%;
+	max-width: 800px;
+}
 }
