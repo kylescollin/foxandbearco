@@ -24,6 +24,102 @@ Master Page Structure & Style
     src: url('../fonts/Brandon_med.otf');
 }
 
+section {
+	clear: both;
+	overflow: auto;
+}
+section header {
+	font-family: "HoeflerTextItalic", Georgia, serif;
+	margin: 0 auto 0 auto;
+	width: 90%;
+	text-align: center;
+}
+section header h1 span {
+	font-family: "HoeflerTextAlt", Georgia, serif;
+}
+section header h1,
+section header h1 span {
+	font-size: 28pt;
+}
+section p {
+	font-family: "HoeflerTextRoman", Georgia, serif;
+	font-size: 12pt;
+	line-height: 1.5em;
+	margin: 2em auto 0 auto;
+	width: 90%;
+	text-align: center;
+}
+section footer {
+	font-family: "BrandonMedium", Verdana, sans-serif;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+	font-size: 14pt;
+	margin: 2em auto;
+	border: 1px solid;
+	width: 250px;
+	height: 3em;
+	line-height: 3em;
+	text-align: center;
+}
+section footer a {
+	text-decoration: none;
+	color: #fff;
+}
+
+.halfleft {
+	width: 90%;
+	float: left;
+}
+.halfright {
+	width: 100%;
+}
+.thirdleft {
+	width: 33%;
+	float: left;
+}
+
+
+/* RESPONSIVE */
+
+@media (min-width: 768px) {
+	section header,
+	section p {
+		width: 70%;
+	}
+	section header h1,
+	section header h1 span {
+		font-size: 36pt;
+	}
+	section p {
+		font-size: 14pt;
+		line-height: 2em;
+		margin-top: 2em;
+	}
+	.halfleft {
+		width: 50%;
+		float: left;
+	}
+	.halfright {
+		width: 50%;
+		margin-left: 50%;
+	}
+}
+
+@media (min-width: 992px) {
+	section header,
+	section p {
+		width: 60%;
+	}
+}
+
+@media (min-width: 1200px) {
+	section header,
+	section p{
+		width: 55%;
+		max-width: 800px;
+	}
+}
+
 /* ===============================================================
 Navigation
 ================================================================*/
@@ -34,14 +130,15 @@ Navigation
 	top: 1.7em;
 	left: 0;
 	margin: 0 auto;
-	width: 100%
+	width: 100%;
+	text-align: center;
 }
 #logo img {
 	width: 150px;
 }
 #nav {
 	display: none;
-	font-family: "BrandonMedium";
+	font-family: "BrandonMedium", Verdana, sans-serif;
 	text-transform: uppercase;
 	font-size: 14pt;
 	letter-spacing: 2px;
@@ -68,6 +165,40 @@ Navigation
 	margin-left: 18em;
 }
 
+/* RESPONSIVE */
+
+@media (min-width: 768px) {
+	#logo img {
+		width: 200px;
+	}
+	#nav {
+		display: inline;
+		line-height: 4em;
+	}
+	#nav > ul > li.break {
+		margin-left: 12em;
+	}
+}
+
+@media (min-width: 992px) {
+	#logo img {
+		width: 230px;
+	}
+	#nav {
+		line-height: 5em;
+	}
+	#nav > ul > li.break {
+		margin-left: 16em;
+	}
+}
+
+@media (min-width: 1200px) {
+	#nav > ul > li {
+		display: inline-block;
+		margin: 0 2em 0 2em;
+	}
+}
+
 /* ===============================================================
 Homepage Intro
 ================================================================*/
@@ -80,116 +211,49 @@ Homepage Intro
 	background-position: center center;
 	background-repeat: no-repeat;
 	padding: 6em 20px 4em 20px;
-	text-align: center;
 	color: #fff;
 }
-
-#intro header {
-	margin: 0 auto;
-	width: 90%;
-}
-#intro header img {
-	margin-top: 1em;
+#intro div {
+	margin: 1em auto 0 auto;
 	width: 80px;
 }
-#intro header h1 {
-	font-family: "HoeflerTextItalic";
-	font-size: 28pt;
-	margin-top: 1em;
-}
-#intro header h1 span {
-	font-family: "HoeflerTextAlt";
-	font-size: 28pt;
-}
-#intro header p {
-	font-family: "HoeflerTextRoman";
-	font-size: 12pt;
-	line-height: 1.5em;
-	margin-top: 2em;
-}
-#intro footer {
-	font-family: "BrandonMedium";
-	text-transform: uppercase;
-	letter-spacing: 2px;
-	font-size: 14pt;
-	margin: 2em auto;
-	border: 1px solid;
-	width: 250px;
-	height: 3em;
-	line-height: 3em;
-}
-#intro footer a {
-	color: #fff;
-	text-decoration: none;
-}
 
-
+/* RESPONSIVE */
 
 @media (min-width: 768px) {
-#logo img {
-	width: 200px;
-}
-#nav {
-	display: inline;
-	line-height: 4em;
-}
-#nav > ul > li.break {
-	margin-left: 12em;
-}
-#intro {
-	padding: 12em 0 12em 0;
-}
-#intro header {
-	width: 70%;
-}
-#intro header img {
-	width: 152px;
-}
-#intro header h1 {
-	font-family: "HoeflerTextItalic";
-	font-size: 36pt;
-	margin-top: 1em;
-}
-#intro header h1 span {
-	font-family: "HoeflerTextAlt";
-	font-size: 36pt;
-}
-#intro header p {
-	font-family: "HoeflerTextRoman";
-	font-size: 14pt;
-	line-height: 2em;
-	margin-top: 2em;
-}
+	#intro {
+		padding: 12em 0 12em 0;
+	}
+	#intro div {
+		width: 152px;
+	}
 }
 
 @media (min-width: 992px) {
-#logo img {
-	width: 248px;
-}
-#nav {
-	line-height: 5em;
-}
-#nav > ul > li.break {
-	margin-left: 18em;
-}
-#intro {
-	padding: 14em 0 14em 0;
-}
-#intro header {
-	width: 60%;
-}
+	#intro {
+		padding: 12em 0 10em 0;
+	}
 }
 
-@media (min-width: 1200px) {
-#nav > ul > li {
-	display: inline-block;
-	margin: 0 2em 0 2em;
+
+.description {
+	background-color: #e7e2d3;
+	padding: 6em 0 6em 0;
 }
-#intro {
-	padding: 14em 0 14em 0;
+
+/* ===============================================================
+Promotion Carousel
+================================================================*/
+.bxslider {
 }
-#intro header {
-	width: 55%;
-	max-width: 800px;
+.bxslider li {
+	
 }
+#promo1 {
+	background-image: url('../images/promo1.jpg');
+	background-size: cover;
+	background-position: center center;
+	background-repeat: no-repeat;
+	color: #fff;
+	height: 100%;
 }
