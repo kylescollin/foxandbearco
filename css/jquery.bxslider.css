@@ -101,6 +101,8 @@
 
 .bx-wrapper .bx-prev {
 	left: 20px;
+	width: 80px;
+	height: 80px;
 	background: url('../images/left.svg') no-repeat;
 }
 
