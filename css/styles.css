@@ -8,7 +8,7 @@ URL: www.foxandbearco.com
 Master Page Structure & Style
 ================================================================*/
 @font-face {
-    font-family: 'HoeflerTextItalic';
+    font-family: 'HoeflerTextItalicCaps';
     src: url('../fonts/HoeflerText-Italic-SmallCaps.otf');
 }
 @font-face {
@@ -23,16 +23,22 @@ Master Page Structure & Style
     font-family: 'BrandonMedium';
     src: url('../fonts/Brandon_med.otf');
 }
+@font-face {
+    font-family: 'HoeflerTextItalic';
+    src: url('../fonts/HoeflerText-Italic.otf');
+}
+
 h1,
 h2,
 h3,
 h4 {
-	font-family: "HoeflerTextItalic", Georgia, serif;
+	font-family: "HoeflerTextItalicCaps", Georgia, serif;
 }
 h1 span {
 	font-family: "HoeflerTextAlt", Georgia, serif;
 }
 h1,
+h2,
 h1 span {
 	font-size: 28pt;
 }
@@ -41,6 +47,12 @@ h3 {
 }
 h4 {
 	font-size: 20pt;
+}
+h5 {
+	font-family: "BrandonMedium", Verdana, sans-serif;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+	font-size: 14pt;
 }
 
 section {
@@ -75,8 +87,9 @@ section footer a {
 	color: #fff;
 }
 
-.halfleft {
-	width: 90%;
+.halfleft,
+.halfleft2 {
+	width: 100%;
 }
 .halfright {
 	width: 100%;
@@ -95,6 +108,7 @@ section footer a {
 		width: 70%;
 	}
 	h1,
+	h2,
 	h1 span {
 		font-size: 36pt;
 	}
@@ -109,7 +123,8 @@ section footer a {
 		line-height: 2em;
 		margin-top: 2em;
 	}
-	.halfleft {
+	.halfleft,
+	.halfleft2 {
 		width: 50%;
 		float: left;
 	}
@@ -142,14 +157,17 @@ section footer a {
 /* ===============================================================
 Navigation
 ================================================================*/
-
+.head {
+	background-color: #2c2c2c;
+	height: 110px;
+}
 #logo {
 	position: absolute;
 	z-index: 1;
-	top: 1.7em;
-	left: 0;
-	margin: 0 auto;
-	width: 100%;
+	top: 0.5em;
+	left: 50%;
+	margin-left: -115px;
+	width: 230px;
 }
 #logo img {
 	width: 150px;
@@ -185,6 +203,9 @@ Navigation
 /* RESPONSIVE */
 
 @media (min-width: 768px) {
+	.head {
+		height: 135px;
+	}
 	#logo img {
 		width: 200px;
 	}
@@ -198,6 +219,9 @@ Navigation
 }
 
 @media (min-width: 992px) {
+	.head {
+		height: 155px;
+	}
 	#logo img {
 		width: 230px;
 	}
@@ -276,6 +300,9 @@ Promotion Carousel
 /* ===============================================================
 Instagram Feed
 ================================================================*/
+#instafeed {
+	overflow: hidden;
+}
 #instafeed img {
 	width: 50%;
 }
@@ -306,6 +333,7 @@ Google Map
 ================================================================*/
 #map {
 	position: relative;
+	overflow-y: hidden;
 }
 #overlay{
 	position:absolute;
@@ -320,11 +348,181 @@ Google Map
 	width: 50px;
 	height: 100px;
 	position: relative;
-	top: 40%;
+	top: 160px;
 }
 #map_canvas {
 	width: 100%;
 	height: 500px;
+}
+
+/* ===============================================================
+Products
+================================================================*/
+#cart {
+	position: absolute;
+	top: 0px;
+	right: 40px;
+	color: #fff;
+}
+.product {
+	background-color: #e0ddd7;
+	text-align: left;
+	border-bottom: 2px solid #fff;
+}
+.copy {
+	width: 90%;
+	margin: 5%;
+}
+.halfleft > .gallery {
+	margin: 5% auto;
+	width: 90%;
+}
+.halfleft2 > .gallery {
+	margin: 5% auto;
+	width: 90%;
+}
+.copy > h1 {
+	float: left;
+}
+.copy > h2 {
+	float: right;
+}
+.copy h5 {
+	padding-top: 3em;
+	padding-bottom: 1em;
+	clear: both;
+	float: left;
+}
+.copy > p {
+	width: 100%;
+	font-size: 12pt;
+	line-height: 20pt;
+	clear: both;
+}
+.copy > ul > li {
+	margin-top: 1em;
+}
+.copy input {
+	clear: both;
+	float: left;
+	font-family: "BrandonMedium", Verdana, sans-serif;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+	font-size: 12pt;
+	margin: 2em auto;
+	border: 1px solid;
+	width: 250px;
+	height: 3.5em;
+	line-height: 3em;
+	background-color: #e0ddd7;
+	cursor: pointer;
+}
+.gallery {
+	width: 80%;
+	height: 80%;
+	max-width: 800px;
+	margin: 5%;
+}
+.gallery li {
+	margin: 0;
+	padding: 0;
+}
+
+/* RESPONSIVE */
+@media (min-width: 768px) {
+	.copy {
+		width: 80%;
+		margin: 5% 5% 5% 12%;
+	}
+	.halfleft > .gallery {
+		margin-left: 12%;
+	}
+	.halfleft2 > .copy {
+		margin: 5%;
+	}
+}
+
+/* ===============================================================
+Select Menu
+================================================================*/
+.selector {
+	float: left;
+	font-family: "HoeflerTextItalic", Georgia, serif;
+	margin: 2.5em 0em 0em 2em;
+	position: relative;
+	z-index: 999;
+}
+.selector li {
+	width: 150px;
+	padding: 0.9em;
+	font-size: 18px;
+	color: #333333;
+	background: #e0ddd7 url(../images/twirl.svg) 95% center no-repeat;
+	background-size: 15px 10px;
+	border: 1px solid #595959;
+	list-style-type: none;
+} 
+.selector li:hover {
+}
+.selector li ul {
+	visibility: hidden;
+	position: absolute;
+	left: 0;
+	margin-top: 17px;
+}
+.selector li ul li {
+	background: #e0ddd7;
+	border-top: none;
+}
+.selector li ul li:hover {
+}
+
+/* ===============================================================
+Order Form
+================================================================*/
+.stark {
+	background-color: #fff;
+	padding: 6em 0 6em 0;
+}
+/* RESPONSIVE */
+
+@media (min-width: 768px) {
+	.orderform {
+		width: 90%;
+		margin: 3em auto;
+	}
+}
+
+@media (min-width: 992px) {
+	.orderform {
+		width: 900px;
+		margin: 3em auto;
+		border-right: 1px solid #9a9a9a;
+		border-bottom: 1px solid #9a9a9a;
+		clear: both;
+	}
+}
+
+.orderform li {
+	border-left: 1px solid #9a9a9a;
+	border-top: 1px solid #9a9a9a;
+	box-sizing: border-box;
+	padding: 0.9em;
+	text-align: left;
+	font-size: 15pt;
+}
+.orderform input {
+	float: right;
+	margin-right: -7px;
+	width: 50px;
+	height: 35px;
+	text-align: center;
+	border: 1px solid #c6c5c5;
+	margin-top: -10px;
+	font-size: 15pt;
+}
+.empty {
+	height: 59px;
 }
 
 /* ===============================================================
@@ -368,3 +566,4 @@ Footer
 	color: #a4a4a4;
 	clear: both;
 	margin-top: 5em;
+}
