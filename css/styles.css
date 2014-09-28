@@ -28,6 +28,12 @@ Master Page Structure & Style
     src: url('../fonts/HoeflerText-Italic.otf');
 }
 
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
+}
+
 h1,
 h2,
 h3,
@@ -100,6 +106,7 @@ section footer a {
 }
 
 
+
 /* RESPONSIVE */
 
 @media (min-width: 768px) {
@@ -160,6 +167,9 @@ Navigation
 .head {
 	background-color: #2c2c2c;
 	height: 110px;
+	width: 100%;
+	position: fixed;
+	z-index: 9999;
 }
 #logo {
 	position: absolute;
@@ -369,6 +379,9 @@ Products
 	text-align: left;
 	border-bottom: 2px solid #fff;
 }
+#firstproduct {
+	padding-top: 150px;
+}
 .copy {
 	width: 90%;
 	margin: 5%;
@@ -487,23 +500,26 @@ Order Form
 /* RESPONSIVE */
 
 @media (min-width: 768px) {
-	.orderform {
+	#orderform {
 		width: 90%;
 		margin: 3em auto;
 	}
 }
 
 @media (min-width: 992px) {
-	.orderform {
+	#orderform {
 		width: 900px;
 		margin: 3em auto;
-		border-right: 1px solid #9a9a9a;
-		border-bottom: 1px solid #9a9a9a;
 		clear: both;
 	}
 }
-
-.orderform li {
+.full {
+	width: 100%;
+	border-bottom: 1px solid #9a9a9a;
+	border-right: 1px solid #9a9a9a;
+	margin-top:40px;
+}
+.numbers li {
 	border-left: 1px solid #9a9a9a;
 	border-top: 1px solid #9a9a9a;
 	box-sizing: border-box;
@@ -511,7 +527,7 @@ Order Form
 	text-align: left;
 	font-size: 15pt;
 }
-.orderform input {
+.numbers input {
 	float: right;
 	margin-right: -7px;
 	width: 50px;
@@ -520,9 +536,33 @@ Order Form
 	border: 1px solid #c6c5c5;
 	margin-top: -10px;
 	font-size: 15pt;
+	outline: none;
+}
+.numbers li div {
+	float: right;
+}
+.names input {
+	border-right: 0px;
+	border-bottom: 0px;
+	border-left: 1px solid #9a9a9a;
+	border-top: 1px solid #9a9a9a;
+	box-sizing: border-box;
+	text-align: left;
+	width: 100%;
+	padding: 0.9em;
+	height: 55px;
+	font-family: "HoeflerTextRoman", Georgia, serif;
+	font-size: 14pt;
+	outline: none;
 }
 .empty {
-	height: 59px;
+	height: 56px;
+}
+.empty2 {
+	border-left: 1px solid #9a9a9a;
+	border-top: 1px solid #9a9a9a;
+	box-sizing: border-box;
+	height: 56px;
 }
 
 /* ===============================================================
