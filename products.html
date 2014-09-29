@@ -46,6 +46,7 @@
 						<ul class="selector">
 							<li><span>Garlic</span>
 								<ul>
+									<li class="hiddenFlavor">Garlic</li>
 									<li>Spicy</li>
 								</ul>
 							</li>
@@ -71,9 +72,9 @@
 				<div class="gallery">
 					<ul class="bxslider">
 						<li><img src="images/products/cookies/1.jpg" /></li>
-						<li><img src="images/products/cookies/1.jpg" /></li>
-						<li><img src="images/products/cookies/1.jpg" /></li>
-						<li><img src="images/products/cookies/1.jpg" /></li>
+						<li><img src="images/products/cookies/2.jpg" /></li>
+						<li><img src="images/products/cookies/3.jpg" /></li>
+						<li><img src="images/products/cookies/4.jpg" /></li>
 					</ul>
 				</div>
 			</div>
@@ -86,6 +87,11 @@
 					<h5>Flavor:</h5>
 						<ul class="selector">
 							<li><span>Chocolate Chip</span>
+								<ul>
+									<li class="hiddenFlavor">Chocolate Chip</li>
+									<li>Snickerdoodle</li>
+									<li>White Chocolate and Cranberry</li>
+								</ul>
 							</li>
 						</ul>
 					<input type="submit" value="Add To Cart">
@@ -98,7 +104,7 @@
 		<section class="product">
 			<div class="halfleft">
 				<div class="copy">
-					<h1>Bread</h1><h2>$8</h2>
+					<h1>Banana Loaf</h1><h2>$8</h2>
 					<h5>Description</h5>
 					<p>The best part about this loaf? How delightfully puffy it is! Even your pet monkey will want a slice. The second best part? Mashing all those ripened bananas!</p>
 					<form class="flavors" name="Banana Loaf">
@@ -106,6 +112,7 @@
 						<ul class="selector">
 							<li><span>Plain</span>
 								<ul>
+									<li class="hiddenFlavor">Plain</li>
 									<li>Chocolate Chip</li>
 									<li>Walnut</li>
 								</ul>
@@ -118,10 +125,9 @@
 			<div class="halfleft2">
 				<div class="gallery">
 					<ul class="bxslider">
-						<li><img src="images/products/bread/1.jpg" /></li>
-						<li><img src="images/products/bread/1.jpg" /></li>
-						<li><img src="images/products/bread/1.jpg" /></li>
-						<li><img src="images/products/bread/1.jpg" /></li>
+						<li><img src="images/products/bananaloaf/1.jpg" /></li>
+						<li><img src="images/products/bananaloaf/2.jpg" /></li>
+						<li><img src="images/products/bananaloaf/3.jpg" /></li>
 					</ul>
 				</div>
 			</div>
@@ -132,9 +138,6 @@
 			<div class="halfleft">
 				<div class="gallery">
 					<ul class="bxslider">
-						<li><img src="images/products/bread/1.jpg" /></li>
-						<li><img src="images/products/bread/1.jpg" /></li>
-						<li><img src="images/products/bread/1.jpg" /></li>
 						<li><img src="images/products/bread/1.jpg" /></li>
 					</ul>
 				</div>
@@ -148,10 +151,10 @@
 					<form class="flavors" name="Bread">
 					<h5>Flavor:</h5>
 						<ul class="selector">
-							<li><span>Whole Wheat</span>
+							<li><span>Plain</span>
 								<ul>
+									<li class="hiddenFlavor">Plain</li>
 									<li>Garlic</li>
-									<li>Banana</li>
 								</ul>
 							</li>
 						</ul>
@@ -172,12 +175,14 @@
 					<form class="flavors" name="Lotion">
 					<h5>Flavor:</h5>
 						<ul class="selector">
-							<li><span>Cedarwood</span>
+							<li><span>Lavender</span>
 								<ul>
+									<li class="hiddenFlavor">Lavender</li>
+									<li>Rose</li>
+									<li>Cedar</li>
 									<li>Citronella</li>
 									<li>Jasmine</li>
-									<li>Lavender</li>
-									<li>Peppermint</li>
+									<li>Spearmint</li>
 								</ul>
 							</li>
 						</ul>
@@ -189,9 +194,8 @@
 				<div class="gallery">
 					<ul class="bxslider">
 						<li><img src="images/products/lotions/1.jpg" /></li>
-						<li><img src="images/products/lotions/1.jpg" /></li>
-						<li><img src="images/products/lotions/1.jpg" /></li>
-						<li><img src="images/products/lotions/1.jpg" /></li>
+						<li><img src="images/products/lotions/2.jpg" /></li>
+						<li><img src="images/products/lotions/3.jpg" /></li>
 					</ul>
 				</div>
 			</div>
@@ -227,20 +231,24 @@
 						<ul class="numbers">
 							<li>Pickles - Garlic<input type="number" id="Pickles-Garlic" value="0" min="0" max="10"></li>
 							<li>Pickles - Spicy<input type="number" id="Pickles-Spicy" value="0" min="0" max="10"></li>
-							<li>Bread - Whole Wheat<input type="number" id="Bread-WholeWheat" value="0" min="0" max="10"></li>
-							<li>Bread - Garlic<input type="number" id="Bread-Garlic" value="0" min="0" max="10"></li>
-							<li>Bread - Banana<input type="number" id="Bread-Banana" value="0" min="0" max="10"></li>
 							<li>Cookies - Chocolate Chip<input type="number" id="Cookies-ChocolateChip" value="0" min="0" max="10"></li>
+							<li>Cookies - Snickerdoodle<input type="number" id="Cookies-Snickerdoodle" value="0" min="0" max="10"></li>
+							<li>Cookies - White Chocolate and Cranberry<input type="number" id="Cookies-WhiteChocolateandCranberry" value="0" min="0" max="10"></li>
+							<li>Banana Loaf - Plain<input type="number" id="BananaLoaf-Plain" value="0" min="0" max="10"></li>
+							<li>Banana Loaf - Chocolate Chip<input type="number" id="BananaLoaf-ChocolateChip" value="0" min="0" max="10"></li>
+							<li>Banana Loaf - Walnut<input type="number" id="BananaLoaf-Walnut" value="0" min="0" max="10"></li>
 						</ul>
 					</div>
 					<div class="halfright">
 						<ul class="numbers">
-							<li>Lotion - Cedarwood<input type="number" id="Lotion-Cedarwood" value="0" min="0" max="10"></li>
+							<li>Bread - Plain<input type="number" id="Bread-Plain" value="0" min="0" max="10"></li>
+							<li>Bread - Garlic<input type="number" id="Bread-Garlic" value="0" min="0" max="10"></li>
+							<li>Lotion - Lavender<input type="number" id="Lotion-Lavender" value="0" min="0" max="10"></li>
+							<li>Lotion - Rose<input type="number" id="Lotion-Rose" value="0" min="0" max="10"></li>
+							<li>Lotion - Cedar<input type="number" id="Lotion-Cedar" value="0" min="0" max="10"></li>
 							<li>Lotion - Citronella<input type="number" id="Lotion-Citronella" value="0" min="0" max="10"></li>
 							<li>Lotion - Jasmine<input type="number" id="Lotion-Jasmine" value="0" min="0" max="10"></li>
-							<li>Lotion - Lavender<input type="number" id="Lotion-Lavender" value="0" min="0" max="10"></li>
-							<li>Lotion - Peppermint<input type="number" id="Lotion-Peppermint" value="0" min="0" max="10"></li>
-							<li class="empty"></li>
+							<li>Lotion - Spearmint<input type="number" id="Lotion-Spearmint" value="0" min="0" max="10"></li>
 						</ul>
 					</div>
 				</div>
@@ -322,23 +330,30 @@
 				switch(product){
 					case 'Pickles-Garlic': price = 10 * amount; break;
 					case 'Pickles-Spicy': price = 10 * amount; break;
-					case 'Bread-WholeWheat': price = 7 * amount; break;
-					case 'Bread-Garlic': price = 7 * amount; break;
-					case 'Bread-Banana': price = 7 * amount; break;
 					case 'Cookies-ChocolateChip': price = 8 * amount; break;
-					case 'Lotion-Cedarwood': price = 8 * amount; break;
+					case 'Cookies-Snickerdoodle': price = 8 * amount; break;
+					case 'Cookies-WhiteChocolateandCranberry': price = 8 * amount; break;
+					case 'BananaLoaf-Plain': price = 8 * amount; break;
+					case 'BananaLoaf-ChocolateChip': price = 8 * amount; break;
+					case 'BananaLoaf-Walnut': price = 8 * amount; break;
+					case 'Bread-Plain': price = 7 * amount; break;
+					case 'Bread-Garlic': price = 7 * amount; break;
+					case 'Lotion-Lavender': price = 8 * amount; break;
+					case 'Lotion-Rose': price = 8 * amount; break;
+					case 'Lotion-Cedar': price = 8 * amount; break;
 					case 'Lotion-Citronella': price = 8 * amount; break;
 					case 'Lotion-Jasmine': price = 8 * amount; break;
-					case 'Lotion-Lavender': price = 8 * amount; break;
-					case 'Lotion-Peppermint': price = 8 * amount; break;
+					case 'Lotion-Spearmint': price = 8 * amount; break;
 				}
 				return price;
 			}
 
 			$('.selector').click(function(event) {
 				var target = $(event.target);
-				if(!target.parent('.selector').length) {
+				if(target.get(0).tagName != "SPAN" && !target.parent('.selector').length) {
 					$(this).find("span").text(target.text());
+					$(this).find('.hiddenFlavor').removeClass('hiddenFlavor');
+					target.addClass('hiddenFlavor');
 				}
 				var openmenu = $(this).find('ul');
 				if(openmenu.css('visibility') === 'hidden'){
@@ -351,7 +366,7 @@
 			
 			$('.flavors').submit(function(){
 				var unit = $(this).find("span").text().replace(/\s+/g, '');;
-				unit = $(this).attr('name') + "-" + unit;
+				unit = $(this).attr('name').replace(/\s+/g, '') + "-" + unit;
 				var num = $('#'+ unit).val();
 				num++;
 				$('#'+ unit).val(num);

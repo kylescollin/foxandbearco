@@ -430,6 +430,9 @@ Products
 	background-color: #e0ddd7;
 	cursor: pointer;
 }
+.hiddenFlavor{
+	display: none;
+}
 .gallery {
 	width: 80%;
 	height: 80%;
