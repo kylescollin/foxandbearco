@@ -14,6 +14,7 @@
 		<!-- JS -->
 		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
 		<script src="js/jquery.bxslider.min.js"></script>
+		<script src="js/products.js"></script>
 	</head>
 
 	<body>
@@ -258,21 +259,28 @@
 					</ul>
 				</div>
 				<div class="full">
-					<div class="halfleft">
-						<ul class="names">
-							<li><input type="text" id="First-Name" placeholder="First Name"></li>
-							<li><input type="text" id="Email-Address" placeholder="Email Address"></li>
-							<li><input type="text" id="Pickup-Time" placeholder="Pickup Time"></li>
-						</ul>
-					</div>
-					<div class="halfright">
-						<ul class="names">
-							<li><input type="text" id="Last-Name" placeholder="Last Name"></li>
-							<li><input type="text" id="Phone-Number" placeholder="Phone Number"></li>
-							<li class="empty2"></li>
-						</ul>
-					</div>
+					<ul class="names">
+						<li><input type="text" id="First-Name" name="first_name" required="true" placeholder="First Name" autocomplete="fname"></li>
+						<li><input type="text" id="Last-Name" name="last_name" required="true" placeholder="Last Name" autocomplete="lname"></li>
+						<li><input type="email" id="Email-Address" name="email" required="true" placeholder="Email Address" autocomplete="email"></li>
+						<li><input type="text" id="Phone-Number" name="phone_number" placeholder="Phone Number (optional)" autocomplete="tel"></li>
+					</ul>
 				</div>
+				<div>
+				<ul class="selector2">
+					<li><span>Select Pickup Time / Date</span>
+						<ul>
+							<li>October 17  |  2-4pm  —  28 Havemeyer</li>
+							<li>October 18  |  2-4pm  —  28 Havemeyer</li>
+							<li>October 22  |  2-4pm  —  28 Havemeyer</li>
+						</ul>
+					</li>
+				</ul>
+				<div class="empty2"></div>
+				</div>
+				<footer class="submitbutton">
+					<input id="submit" type="submit" value="Place Order">
+				</footer>
 			</form>
 			
 		</section>
@@ -313,72 +321,5 @@
 				$('.bxslider').bxSlider();
 			});			
 		</script>
-		<script type="text/javascript">
-			function updateCartItems(){
-				var totalItems = 0;
-				var productTotal = 0;
-				$('.numbers :input').each(function(){
-					productTotal += getPrice($(this).attr('id'),parseInt($(this).val(), 10));
-					totalItems += parseInt($(this).val(), 10);
-				});
-				$('#total').html('$' + productTotal.toFixed(2));
-				$('#cart').html('CART - ' + totalItems);
-			}
-
-			function getPrice(product, amount){
-				var price = 0;
-				switch(product){
-					case 'Pickles-Garlic': price = 10 * amount; break;
-					case 'Pickles-Spicy': price = 10 * amount; break;
-					case 'Cookies-ChocolateChip': price = 8 * amount; break;
-					case 'Cookies-Snickerdoodle': price = 8 * amount; break;
-					case 'Cookies-WhiteChocolateandCranberry': price = 8 * amount; break;
-					case 'BananaLoaf-Plain': price = 8 * amount; break;
-					case 'BananaLoaf-ChocolateChip': price = 8 * amount; break;
-					case 'BananaLoaf-Walnut': price = 8 * amount; break;
-					case 'Bread-Plain': price = 7 * amount; break;
-					case 'Bread-Garlic': price = 7 * amount; break;
-					case 'Lotion-Lavender': price = 8 * amount; break;
-					case 'Lotion-Rose': price = 8 * amount; break;
-					case 'Lotion-Cedar': price = 8 * amount; break;
-					case 'Lotion-Citronella': price = 8 * amount; break;
-					case 'Lotion-Jasmine': price = 8 * amount; break;
-					case 'Lotion-Spearmint': price = 8 * amount; break;
-				}
-				return price;
-			}
-
-			$('.selector').click(function(event) {
-				var target = $(event.target);
-				if(target.get(0).tagName != "SPAN" && !target.parent('.selector').length) {
-					$(this).find("span").text(target.text());
-					$(this).find('.hiddenFlavor').removeClass('hiddenFlavor');
-					target.addClass('hiddenFlavor');
-				}
-				var openmenu = $(this).find('ul');
-				if(openmenu.css('visibility') === 'hidden'){
-					openmenu.css('visibility','visible');
-				} else {
-					openmenu.css('visibility','hidden');
-				}
-			});
-
-			
-			$('.flavors').submit(function(){
-				var unit = $(this).find("span").text().replace(/\s+/g, '');;
-				unit = $(this).attr('name').replace(/\s+/g, '') + "-" + unit;
-				var num = $('#'+ unit).val();
-				num++;
-				$('#'+ unit).val(num);
-				updateCartItems();
-				return false;
-			});
-
-			$('.numbers :input').change(function(){
-				updateCartItems();
-			});
-
-		</script>
-
 	</body>
 </html>

@@ -16,6 +16,7 @@
 		<script src="js/jquery.bxslider.min.js"></script>
 		<script src="js/instafeed.js"></script>
 		<script src="https://maps.googleapis.com/maps/api/js"></script>
+		<script src="js/main.js"></script>
 	</head>
 
 	<body>
@@ -137,47 +138,5 @@
 			</div>
 			<div id="legal">©2014 Fox &amp; Bear Company. All rights reserved.</div>
 		</section>
-
-		<!-- Scripts -->
-		<script>
-			$(document).ready(function(){
-				$('.bxslider').bxSlider();
-			});
-		</script>
-		<script type="text/javascript">
-		    var feed = new Instafeed({
-				get: 'user',
-				userId: 1400806613,
-			    accessToken: '1669967.03e73c5.0b87abb7ae0648f3ac2001003fca8048',
-				link: 'true',
-				limit: '8',
-				resolution: 'standard_resolution',
-				clientId: '03e73c51787c491c95514ecc3f7d4cdb'
-		    });
-		    feed.run();
-		</script>
-		<script>
-			function initialize() {
-				var mapCanvas = document.getElementById('map_canvas');
-				var mapOptions = {
-					center: new google.maps.LatLng(40.7178382,-73.9577329),
-					zoom: 16,
-					mapTypeId: google.maps.MapTypeId.ROADMAP,
-					disableDefaultUI: true
-				}
-				var map = new google.maps.Map(mapCanvas, mapOptions);
-				var center;
-				function calculateCenter() {
-					center = map.getCenter();
-				}
-				google.maps.event.addDomListener(map, 'idle', function() {
-					calculateCenter();
-				});
-				google.maps.event.addDomListener(window, 'resize', function() {
-					map.setCenter(center);
-				});
-			}
-			google.maps.event.addDomListener(window, 'load', initialize);
-		</script>
 	</body>
 </html>

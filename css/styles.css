@@ -87,10 +87,21 @@ section footer {
 	width: 250px;
 	height: 3em;
 	line-height: 3em;
+	clear: both;
 }
 section footer a {
 	text-decoration: none;
 	color: #fff;
+}
+section footer input {
+	border: 0px;
+	background: none;
+	font-family: "BrandonMedium", Verdana, sans-serif;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+	font-size: 14pt;
+	width: 100%;
+	height: 100%;
 }
 
 .halfleft,
@@ -469,7 +480,7 @@ Select Menu
 	z-index: 999;
 }
 .selector li {
-	width: 150px;
+	width: 180px;
 	padding: 0.9em;
 	font-size: 18px;
 	color: #333333;
@@ -479,6 +490,7 @@ Select Menu
 	list-style-type: none;
 } 
 .selector li:hover {
+	background-color: #d1cdc9;
 }
 .selector li ul {
 	visibility: hidden;
@@ -500,6 +512,7 @@ Order Form
 	background-color: #fff;
 	padding: 6em 0 6em 0;
 }
+
 /* RESPONSIVE */
 
 @media (min-width: 768px) {
@@ -521,6 +534,7 @@ Order Form
 	border-bottom: 1px solid #9a9a9a;
 	border-right: 1px solid #9a9a9a;
 	margin-top:40px;
+	overflow: auto;
 }
 .numbers li {
 	border-left: 1px solid #9a9a9a;
@@ -551,21 +565,77 @@ Order Form
 	border-top: 1px solid #9a9a9a;
 	box-sizing: border-box;
 	text-align: left;
-	width: 100%;
+	width: 50%;
 	padding: 0.9em;
-	height: 55px;
+	height: 60px;
 	font-family: "HoeflerTextRoman", Georgia, serif;
 	font-size: 14pt;
-	outline: none;
+	float: left;
 }
 .empty {
 	height: 56px;
 }
 .empty2 {
 	border-left: 1px solid #9a9a9a;
-	border-top: 1px solid #9a9a9a;
+	border-bottom: 1px solid #9a9a9a;
+	border-right: 1px solid #9a9a9a;
 	box-sizing: border-box;
-	height: 56px;
+	padding: 0.9em;
+	height: 59px;
+	width: 50%;
+	float: left;
+}
+.submitbutton {
+	margin-top: 90px;
+}
+
+/* ===============================================================
+Select Menu 2
+================================================================*/
+.selector2 {
+	width: 50%;
+	font-family: "HoeflerTextRoman", Georgia, serif;
+	font-size: 14pt;
+	height: 60px;
+	box-sizing: border-box;
+	z-index: 9999;
+	position: relative;
+	float: left;
+}
+.selector2 li {
+	text-align: left;
+	padding: 1.1em;
+	font-size: 18px;
+	color: #333333;
+	border-left: 1px solid #9a9a9a;
+	border-bottom: 1px solid #9a9a9a;
+	background: url(../images/twirl.svg) 95% center no-repeat;
+	background-size: 15px 10px;
+	list-style-type: none;
+	box-sizing: border-box;	
+}
+.selector2 li:hover {
+	background-color: #f2f2f2;
+}
+.selector2 li > span {
+	color: #999999;
+}
+.selector2 li ul {
+	visibility: hidden;
+	position: absolute;
+	left: 0;
+	margin-top: 21px;
+	float: left;
+	z-index: 9999;
+	border-right: 1px solid #9a9a9a;
+	width: 100%;	
+}
+.selector2 li ul li {
+	background: #fff;
+	border-top: none;
+	width: 100%;
+}
+.selector2 li ul li:hover {
 }
 
 /* ===============================================================
