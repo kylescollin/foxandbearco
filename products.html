@@ -25,10 +25,10 @@
 			<!-- Nav -->
 			<nav id="nav">
 				<ul>
+					<li><a href="index.html">Home</a></li>
 					<li><a href="products.html">Products</a></li>
-					<li><a href="about.html">About</a></li>
-					<li class="break"><a href="contact.html">Contact</a></li>
-					<li><a href="blog.html">Blog</a></li>
+					<li class="break"><a href="about.html">About</a></li>
+					<li><a href="contact.html">Contact</a></li>
 				</ul>
 				<a href="products.html#orderform"><div id="cart">CART - 0</div></a>
 			</nav>
@@ -226,7 +226,7 @@
 			<header>
 				<h1>Order Form</h1>
 			</header>
-			<form id="orderform">
+			<form id="orderform" novalidate>
 				<div class="full">
 					<div class="halfleft">
 						<ul class="numbers">
@@ -258,11 +258,12 @@
 						<li>TOTAL:<div id="total">$0.00</div></li>
 					</ul>
 				</div>
+				<div id="formerrors"></div>
 				<div class="full">
 					<ul class="names">
-						<li><input type="text" id="First-Name" name="first_name" required="true" placeholder="First Name" autocomplete="fname"></li>
-						<li><input type="text" id="Last-Name" name="last_name" required="true" placeholder="Last Name" autocomplete="lname"></li>
-						<li><input type="email" id="Email-Address" name="email" required="true" placeholder="Email Address" autocomplete="email"></li>
+						<li><input type="text" id="First-Name" name="first_name" placeholder="First Name" autocomplete="fname"></li>
+						<li><input type="text" id="Last-Name" name="last_name" placeholder="Last Name" autocomplete="lname"></li>
+						<li><input type="email" id="Email-Address" name="email" placeholder="Email Address" autocomplete="email"></li>
 						<li><input type="text" id="Phone-Number" name="phone_number" placeholder="Phone Number (optional)" autocomplete="tel"></li>
 					</ul>
 				</div>

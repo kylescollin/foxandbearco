@@ -1,7 +1,7 @@
 <?php
 if($_POST)
 {
-	$to_email   	= "foxandbearco@gmail.com"; //Recipient email, Replace with own email here
+	$to_email   	= "hello@foxandbearco.com";
 	
 	//check if its an ajax request, exit if not
     if(!isset($_SERVER['HTTP_X_REQUESTED_WITH']) AND strtolower($_SERVER['HTTP_X_REQUESTED_WITH']) != 'xmlhttprequest') {
@@ -19,6 +19,7 @@ if($_POST)
 	$emailaddress	= filter_var($_POST["emailaddress"], FILTER_SANITIZE_EMAIL);
 	$phonenumber	= filter_var($_POST["phonenumber"], FILTER_SANITIZE_NUMBER_INT);
 	$pickuptime		= filter_var($_POST["pickuptime"], FILTER_SANITIZE_STRING);
+	$total			= $_POST["total"];
 
 	$PicklesGarlic						= filter_var($_POST["Pickles-Garlic"], FILTER_SANITIZE_NUMBER_INT);
 	$PicklesSpicy						= filter_var($_POST["Pickles-Spicy"], FILTER_SANITIZE_NUMBER_INT);
@@ -55,8 +56,11 @@ if($_POST)
 		die($output);
 	}
 	
+	//include both email addresses
+	$to_email .= ", ".$emailaddress;
+
 	//email body
-	$message_body = "Name: ".$firstname." ".$lastname."\r\n\r\nEmail: ".$emailaddress."\r\n\r\nPhone Number: ".$phonenumber."\r\n\r\nPickup Time: ".$pickuptime."\r\n\r\n\r\n<b>Requested Products:</b>\r\n";
+	$message_body = "Name: ".$firstname." ".$lastname."\r\n\r\nEmail: ".$emailaddress."\r\n\r\nPhone Number: ".$phonenumber."\r\n\r\nPickup Time: ".$pickuptime."\r\n\r\n\r\nRequested Products:\r\n";
 
 	if($PicklesGarlic>0){
 		$message_body .= "• Pickles - Garlic: ".$PicklesGarlic."\r\n";
@@ -106,6 +110,8 @@ if($_POST)
 	if($LotionSpearmint>0){
 		$message_body .= "• Lotion - Spearmint: ".$LotionSpearmint."\r\n";
 	}
+
+	$message_body .= "\r\n\r\nTotal Due Upon Pickup: ".$total;
 
 	//subject
 	$subject = "Order from: ".$firstname." ".$lastname;

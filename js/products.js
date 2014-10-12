@@ -36,6 +36,14 @@ function getPrice(product, amount){
 	return price;
 }
 
+function getNumberOfProducts(){
+	var numberofproducts = 0;
+	$('.numbers :input').each(function(){
+		numberofproducts += parseInt($(this).val(), 10);
+	});
+	return numberofproducts;
+}
+
 //Returns the number of different product types that have been added to the order form.
 function getNumberOfProductTypes(){
 	var numberofproducttypes = 0;
@@ -46,6 +54,14 @@ function getNumberOfProductTypes(){
 	});
 	console.log("Total number of product types: " + numberofproducttypes);
 	return numberofproducttypes;
+}
+
+function resetForm(){
+	$('#orderform')[0].reset();
+	$('#cart').html('CART - 0');
+	$('#total').html('$0.00');
+	$('.selector2').find('span').text('Select Pickup Time / Date');
+	$('.selector2').find('span').css('color','#999999');
 }
 
 
@@ -100,6 +116,7 @@ $(document).ready(function(){
 
 	// Updates cart when users "add to cart" from the top section
 	$('.flavors').submit(function(){
+		// Flash "Item Added" on Button
 		var button = $(this).find('input[type=submit]');
 		button.fadeOut('fast',function(){
 			button.attr("value","Item Added").fadeIn('fast');
@@ -109,10 +126,7 @@ $(document).ready(function(){
 				button.attr("value","Add To Cart").fadeIn('fast');
 			});
 		}, 1500);
-		// $('input[type=submit').attr("value","Item Added");
-		// setTimeout(function() {
-		// 	$('input[type=submit').attr("value","Add To Cart");
-		// }, 1500);
+		// Update carts
 		var unit = $(this).find("span").text().replace(/\s+/g, ''); // Get flavor name
 		unit = $(this).attr('name').replace(/\s+/g, '') + "-" + unit; // Combine product name and flavor name
 		var num = $('#'+ unit).val();
@@ -136,24 +150,75 @@ $(document).ready(function(){
 	$("#submit").click(function() {
 		var proceed = true;
 
-		//check for empty required fields
-		$("#orderform input[required=true]").each(function(){
-			$(this).css('box-shadow',''); 
-			if(!$.trim($(this).val())){ //if this field is empty 
-				$(this).css('box-shadow','inset 0 0 3px red'); //change border color to red   
-				proceed = false; //set do not proceed flag
-			}
-			//check invalid email
-			var email_reg = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/; 
-			if($(this).attr("type")=="email" && !email_reg.test($.trim($(this).val()))){
-				$(this).css('box-shadow','inset 0 0 3px red'); //change border color to red   
-				proceed = false; //set do not proceed flag				
-			}	
+		//reset error red marks
+		$("#orderform input").each(function(){
+			$(this).css('box-shadow','');
 		});
+		$('#formerrors').css('display','none');
+
 		//check if pickup time has been chosen
 		var pickuptime = $('.selector2').find("span").text()
 		if(pickuptime === "Select Pickup Time / Date"){
 			$('.selector2').css('box-shadow','inset 0 0 3px red'); //change border color to red
+			proceed = false;
+			$('#formerrors').text("Please select a pickup time");
+			$('#formerrors').css('display','block');
+		}
+
+		var phone = $("#orderform input[name=phone_number]");
+		if($.trim(phone.val()) && phone.val().length < 10){
+			phone.css('box-shadow','inset 0 0 3px red');
+			proceed = false;
+			$('#formerrors').text("Please enter a valid phone number or leave blank");
+			$('#formerrors').css('display','block');
+		}
+
+		var email = $("#orderform input[name=email]");
+		if(!$.trim(email.val())){
+			email.css('box-shadow','inset 0 0 3px red');
+			proceed = false;
+			$('#formerrors').text("Please enter an email address");
+			$('#formerrors').css('display','block');
+		}
+		var email_reg = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/;
+		if(!email_reg.test($.trim(email.val()))){
+			email.css('box-shadow','inset 0 0 3px red');
+			proceed = false;
+			$('#formerrors').text("Please enter a valid email address");
+			$('#formerrors').css('display','block');
+		}
+
+		var lastname = $("#orderform input[name=last_name]");
+		if(lastname.val().length < 2){ //if this field is empty 
+			lastname.css('box-shadow','inset 0 0 3px red');
+			proceed = false;
+			$('#formerrors').text("Please enter a valid last name");
+			$('#formerrors').css('display','block');
+		}
+		if(!$.trim(lastname.val())){ //if this field is empty 
+			lastname.css('box-shadow','inset 0 0 3px red');
+			proceed = false;
+			$('#formerrors').text("Please enter your last name");
+			$('#formerrors').css('display','block');
+		}
+
+		var firstname = $("#orderform input[name=first_name]");
+		if(firstname.val().length < 2){ //if this field is empty 
+			firstname.css('box-shadow','inset 0 0 3px red');
+			proceed = false;
+			$('#formerrors').text("Please enter a valid first name");
+			$('#formerrors').css('display','block');
+		}
+		if(!$.trim(firstname.val())){ //if this field is empty 
+			firstname.css('box-shadow','inset 0 0 3px red');
+			proceed = false;
+			$('#formerrors').text("Please enter your first name");
+			$('#formerrors').css('display','block');
+		}
+		if(getNumberOfProducts() < 1){
+			proceed = false;
+			$('#formerrors').text("Please add an item to your cart");
+			$('#formerrors').css('display','block');
 		}
 
 
@@ -166,6 +231,7 @@ $(document).ready(function(){
 				'emailaddress'		: $('input[name=email]').val(), 
 				'phonenumber'		: $('input[name=phone_number]').val(), 
 				'pickuptime'		: $('.selector2').find("span").text(),
+				'total'				: $('#total').text(),
 
 				'Pickles-Garlic'					: $('input[id=Pickles-Garlic]').val(),
 				'Pickles-Spicy'						: $('input[id=Pickles-Spicy]').val(),
@@ -184,15 +250,21 @@ $(document).ready(function(){
 				'Lotion-Jasmine'					: $('input[id=Lotion-Jasmine]').val(),
 				'Lotion-Spearmint'					: $('input[id=Lotion-Spearmint]').val()
 			};
-			console.log("item1 + " + post_data.item1);
+
+			$('#submit').val('sending...');
+
 			//Ajax post data to server
-            $.post('sendform.php', post_data, function(response){  
-				if(response.type == 'error'){ //load json data from server and output message    
-					output = '<div class="error">'+response.text+'</div>';
+            $.post('productform.php', post_data, function(response){  
+				if(response.type == 'error'){ //load json data from server and output message 
+					console.log('here');   
+					$('#formerrors').text(response.text);
+					$('#formerrors').css('display','block');
 				}else{
-				    output = '<div class="success">'+response.text+'</div>';
-					//reset values in all input fields
-					$("#orderform  input").val(''); 
+					$('#submit').val('order placed');
+					$('#submit').css('background','#2d2d2d url(images/check.svg) 4% center no-repeat');
+					$('#submit').css('background-size', '30px 30px');
+					$('#submit').css('color','#fff');
+					resetForm();
 				}
             }, 'json');
 		}
