@@ -30,8 +30,12 @@ Master Page Structure & Style
 
 input[type=number]::-webkit-inner-spin-button, 
 input[type=number]::-webkit-outer-spin-button { 
-  -webkit-appearance: none; 
-  margin: 0; 
+	-webkit-appearance: none; 
+	margin: 0;
+}
+input {
+	-webkit-appearance: none;
+	border-radius: 0px;
 }
 
 h1,
@@ -107,6 +111,7 @@ section footer input {
 .halfleft,
 .halfleft2 {
 	width: 100%;
+	clear: both;
 }
 .halfright {
 	width: 100%;
@@ -145,6 +150,7 @@ section footer input {
 	.halfleft2 {
 		width: 50%;
 		float: left;
+		clear: none;
 	}
 	.halfright {
 		width: 50%;
@@ -180,6 +186,7 @@ Navigation
 	height: 110px;
 	width: 100%;
 	position: fixed;
+	top: 0;
 	z-index: 9999;
 }
 #logo {
@@ -226,6 +233,8 @@ Navigation
 @media (min-width: 768px) {
 	.head {
 		height: 135px;
+		position: fixed;
+		top: 0;
 	}
 	#logo img {
 		width: 200px;
@@ -242,6 +251,8 @@ Navigation
 @media (min-width: 992px) {
 	.head {
 		height: 155px;
+		position: fixed;
+		top: 0;
 	}
 	#logo img {
 		width: 230px;
@@ -259,6 +270,89 @@ Navigation
 		display: inline-block;
 		margin: 0 2em 0 2em;
 	}
+}
+
+/* ===============================================================
+Mobile Navigation
+================================================================*/
+
+#mobilenav {
+         position: fixed;
+         top: 0;
+         bottom: 0;
+         width: 13.755em;
+         right: -13.755em;
+         height: 100%;
+         -webkit-transform: translate(0px, 0px);
+        -moz-transform: translate(0px, 0px);
+        -o-transform: translate(0px, 0px);
+        -ms-transform: translate(0px, 0px);
+        transform: translate(0px, 0px);
+        -webkit-transition: 0.15s ease;
+        -moz-transition: 0.15s ease;
+        -o-transition: 0.15s ease;
+        transition: 0.15s ease;
+        background-color: #2c2c2c;
+        font-family: "BrandonMedium", Verdana, sans-serif;
+		text-transform: uppercase;
+		font-size: 14pt;
+		letter-spacing: 2px;
+}
+
+#mobilenav a {
+	color: #fff;
+	text-decoration: none;
+}
+
+#mobilenav li {
+	padding: 2em 0em 0em 4em;
+}
+
+#mobilenav.active {
+        -webkit-transform: translate(-13.755em, 0px);
+        -moz-transform: translate(-13.755em, 0px);
+        -o-transform: translate(-13.755em, 0px);
+        -ms-transform: translate(-13.755em, 0px);
+        transform: translate(-13.755em, 0px);
+}
+
+.menu-link {
+      position: absolute;
+      top: 30px;
+      right: 30px;
+      font-size: 25pt;
+      color: #fff;
+}
+
+@media (min-width: 768px) {
+	#mobilenav {
+		display: none;
+	}
+	.menu-link {
+		display: none;
+	}
+}
+
+.container,
+.head {
+       -webkit-transform: translate(0px, 0px);
+       -moz-transform: translate(0px, 0px);
+       -o-transform: translate(0px, 0px);
+       -ms-transform: translate(0px, 0px);
+       transform: translate(0px, 0px);
+       -webkit-transition: 0.15s ease;
+       -moz-transition: 0.15s ease;
+       -o-transition: 0.15s ease;
+       transition: 0.15s ease;  
+}
+
+.container.active,
+.head.active {
+       -webkit-transform: translate(-13.725em, 0px);
+       -moz-transform: translate(-13.725em, 0px);
+       -o-transform: translate(-13.725em, 0px);
+       -ms-transform: translate(-13.725em, 0px);
+       transform: translate(-13.725em, 0px);
 }
 
 /* ===============================================================
@@ -316,6 +410,67 @@ Promotion Carousel
 	background-position: center center;
 	background-repeat: no-repeat;
 	color: #fff;
+}
+
+/* ===============================================================
+Newsletter Signup
+================================================================*/
+#newsletterWrapper {
+	position: absolute;
+	left: 50%;
+	width: 500px;
+	top: 15%;
+	display: none;
+}
+#newsletterSignup {
+	position: relative;
+	left: -50%;
+	height: 300px;
+	background-color: #333333;
+}
+#closenewsletter {
+	font-family: "BrandonMedium", Verdana, sans-serif;
+	font-size: 20pt;
+	position: absolute;
+	top: 4px;
+	right: 17px;
+}
+#mc_embed_signup_scroll {
+	padding-top: 2em;
+}
+#mc_embed_signup_scroll label {
+	font-family: "HoeflerTextItalic", Georgia, serif;
+	font-size: 18pt;
+}
+#mce-EMAIL {
+	font-family: "HoeflerTextRoman", Georgia, serif;
+	width: 300px;
+	height: 1em;
+	border: none;
+	padding: 1em;
+	margin-top: 1.5em;
+	font-size: 14pt;
+}
+#legaljargon {
+	width: 350px;
+	color: #aaa;
+	margin: 0 auto;
+	line-height: 1.2em;
+	margin-top: 1em;
+}
+#mc-embedded-subscribe{
+	font-family: "BrandonMedium", Verdana, sans-serif;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+	font-size: 14pt;
+	color: #fff;
+	margin: 1.3em auto;
+	border: 1px solid #fff;
+	width: 250px;
+	height: 3em;
+	line-height: 2.5em;
+	clear: both;
+	background-color: #333333;
 }
 
 /* ===============================================================
@@ -382,8 +537,25 @@ Products
 #cart {
 	position: absolute;
 	top: 0px;
-	right: 40px;
+	right: 30px;
 	color: #fff;
+}
+#cart img {
+	width: 40px;
+	height: 40px;
+	left: -5px;
+	top: 10px;
+	position: relative;
+}
+#sidecart {
+	color: #fff;
+}
+#sidecart img {
+	width: 40px;
+	height: 40px;
+	left: -10px;
+	top: 10px;
+	position: relative;
 }
 .product {
 	background-color: #e0ddd7;
@@ -440,6 +612,8 @@ Products
 	line-height: 3em;
 	background-color: #e0ddd7;
 	cursor: pointer;
+	-webkit-appearance: none;
+	-webkit-border-radius: 0px;
 }
 .hiddenFlavor{
 	display: none;
@@ -508,6 +682,25 @@ Select Menu
 /* ===============================================================
 Order Form
 ================================================================*/
+.anchor{
+  display: block;
+  height: 110px; /*same height as header*/
+  margin-top: -110px; /*same height as header*/
+  visibility: hidden;
+}
+@media (min-width: 768px) {
+	.anchor {
+		height: 135px;
+		margin-top: -135px;
+	}
+}
+
+@media (min-width: 992px) {
+	.anchor {
+		height: 155px;
+		margin-top: -155px;
+	}
+}
 .stark {
 	background-color: #fff;
 	padding: 6em 0 6em 0;
@@ -540,18 +733,20 @@ Order Form
 	border-left: 1px solid #9a9a9a;
 	border-top: 1px solid #9a9a9a;
 	box-sizing: border-box;
-	padding: 0.9em;
+	padding: 0.9em 4em 0.9em 0.9em;
 	text-align: left;
 	font-size: 15pt;
+	position: relative;
 }
 .numbers input {
+	position: absolute;
 	float: right;
-	margin-right: -7px;
-	width: 50px;
-	height: 35px;
+	top: 6px;
+	right: 5px;
+	width: 45px;
+	height: 30px;
 	text-align: center;
 	border: 1px solid #c6c5c5;
-	margin-top: -10px;
 	font-size: 15pt;
 	outline: none;
 }
@@ -576,14 +771,24 @@ Order Form
 	height: 56px;
 }
 .empty2 {
-	border-left: 1px solid #9a9a9a;
-	border-bottom: 1px solid #9a9a9a;
-	border-right: 1px solid #9a9a9a;
-	box-sizing: border-box;
-	padding: 0.9em;
-	height: 59px;
-	width: 50%;
-	float: left;
+	display: none;
+}
+@media (min-width: 768px) {
+	.numbers input {
+		height: 35px;
+		width: 50px;
+	}
+	.empty2 {
+		display: block;
+		border-left: 1px solid #9a9a9a;
+		border-bottom: 1px solid #9a9a9a;
+		border-right: 1px solid #9a9a9a;
+		box-sizing: border-box;
+		padding: 0.9em;
+		height: 59px;
+		width: 50%;
+		float: left;
+	}
 }
 .submitbutton {
 	margin-top: 90px;
@@ -609,7 +814,7 @@ Order Form
 Select Menu 2
 ================================================================*/
 .selector2 {
-	width: 50%;
+	width: 100%;
 	font-family: "HoeflerTextRoman", Georgia, serif;
 	font-size: 14pt;
 	height: 60px;
@@ -617,6 +822,11 @@ Select Menu 2
 	z-index: 9999;
 	position: relative;
 	float: left;
+}
+@media (min-width: 768px) {
+	.selector2 {
+		width: 50%;
+	}
 }
 .selector2 li {
 	text-align: left;
@@ -669,22 +879,50 @@ About Intro
 	color: #fff;
 }
 #aboutcopy {
-	margin-top: 35em;
+	margin-top: 13em;
 	background-color: rgba(0,0,0,0.4);
 	width: 100%;
-	padding: 3em 0em 3em 0em;
+	padding: 1em 0em 1em 0em;
 }
+
 #rightstroke {
 	border-right: 1px solid #fff;
+	margin-bottom: 1em;
 }
+
+@media (min-width: 768px) {
+	#aboutcopy {
+		margin-top: 25em;
+		padding: 3em 0em 3em 0em;
+	}
+	#rightstroke {
+		border-right: 1px solid #fff;
+		margin-bottom: 3em;
+	}
+}
+
+@media (min-width: 992px) {
+	#aboutcopy {
+		margin-top: 35em;
+	}
+}
+
 
 /* ===============================================================
 Contact Us
 ================================================================*/
 
 #contactus {
-	padding-top: 13em;
+	padding-top: 8em;
+	background-color: #fff;
 }
+
+@media (min-width: 768px) {
+	#contactus {
+		padding-top: 13em;
+	}
+}
+
 #contactus h4 {
 	margin-top: 1.5em;
 }
@@ -696,6 +934,9 @@ Contact Us
 	margin-top: 2.5em;
 	width: 80px;
 	height: 80px;
+}
+#contactdetails {
+	padding-bottom: 7em;
 }
 .detailsleft {
 	font-family: "BrandonMedium", Verdana, sans-serif;

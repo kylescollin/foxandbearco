@@ -25,6 +25,9 @@
 	max-width: 100%;
 	display: block;
 }
+.bx-clone {
+  display: none;
+}
 
 /** THEME
 ===================================*/

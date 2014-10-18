@@ -51,7 +51,7 @@ if($_POST)
 		$output = json_encode(array('type'=>'error', 'text' => 'Please enter a valid email! - '.$emailaddress));
 		die($output);
 	}
-	if(strlen($phonenumber)<10){ //check for valid numbers in phone number field
+	if(strlen($phonenumber)>0 && strlen($phonenumber)<10){ //check for valid numbers in phone number field
 		$output = json_encode(array('type'=>'error', 'text' => 'Please enter a full phone number, including area code'));
 		die($output);
 	}
@@ -60,8 +60,24 @@ if($_POST)
 	$to_email .= ", ".$emailaddress;
 
 	//email body
-	$message_body = "Name: ".$firstname." ".$lastname."\r\n\r\nEmail: ".$emailaddress."\r\n\r\nPhone Number: ".$phonenumber."\r\n\r\nPickup Time: ".$pickuptime."\r\n\r\n\r\nRequested Products:\r\n";
+	$message_body = "Dear ".$firstname.",\r\n\r\n";
 
+	$message_body .= "Thank you for placing your order at Fox & Bear Co.\r\n";
+	$message_body .= "Your order has been received and we’re warming up our kitchen now.\r\n\r\n";
+
+	$message_body .= "Please review your order below and the pick up time you selected. If you have any questions or need to change your pick up time, please don’t hesitate to email us at hello@foxandbearco.com or call us at 707-234-5058.\r\n\r\n";
+
+	$message_body .= "Sold to:\r\n";
+	$message_body .= $firstname." ".$lastname."\r\n";
+	$message_body .= "Email: ".$emailaddress."\r\n";
+	if($phonenumber != ""){
+		$message_body .= "Phone Number: ".$phonenumber."\r\n";
+	}
+	$message_body .= "\r\n";
+
+	$message_body .= "We’re excited to see you on Sunday, ".$pickuptime." St.\r\n\r\n";
+
+	$message_body .= "Order summary:\r\n";
 	if($PicklesGarlic>0){
 		$message_body .= "• Pickles - Garlic: ".$PicklesGarlic."\r\n";
 	}
@@ -69,19 +85,19 @@ if($_POST)
 		$message_body .= "• Pickles - Spicy: ".$PicklesSpicy."\r\n";
 	}
 	if($CookiesChocolateChip>0){
-		$message_body .= "• Cookies - ChocolateChip: ".$CookiesChocolateChip."\r\n";
+		$message_body .= "• Cookies - Chocolate Chip: ".$CookiesChocolateChip."\r\n";
 	}
 	if($CookiesSnickerdoodle>0){
 		$message_body .= "• Cookies - Snickerdoodle: ".$CookiesSnickerdoodle."\r\n";
 	}
 	if($CookiesWhiteChocolateandCranberry>0){
-		$message_body .= "• Cookies - WhiteChocolateandCranberry: ".$CookiesWhiteChocolateandCranberry."\r\n";
+		$message_body .= "• Cookies - White Chocolate and Cranberry: ".$CookiesWhiteChocolateandCranberry."\r\n";
 	}
 	if($BananaLoafPlain>0){
 		$message_body .= "• BananaLoaf - Plain: ".$BananaLoafPlain."\r\n";
 	}
 	if($BananaLoafChocolateChip>0){
-		$message_body .= "• BananaLoaf - ChocolateChip: ".$BananaLoafChocolateChip."\r\n";
+		$message_body .= "• BananaLoaf - Chocolate Chip: ".$BananaLoafChocolateChip."\r\n";
 	}
 	if($BananaLoafWalnut>0){
 		$message_body .= "• BananaLoaf - Walnut: ".$BananaLoafWalnut."\r\n";
@@ -111,14 +127,17 @@ if($_POST)
 		$message_body .= "• Lotion - Spearmint: ".$LotionSpearmint."\r\n";
 	}
 
-	$message_body .= "\r\n\r\nTotal Due Upon Pickup: ".$total;
+	$message_body .= "\r\nTotal Due Upon Pickup: ".$total;
+
+	$message_body .= "\r\n\r\nWe accept cash, and credit cards!\r\n\r\nThanks so much!\r\n- Fox & Bear";
 
 	//subject
-	$subject = "Order from: ".$firstname." ".$lastname;
+	$subject = "Thanks for your order ".$firstname." ".$lastname."!";
 	
 	//proceed with PHP email.
-	$headers = 'From: '.$firstname." ".$lastname.'' . "\r\n" .
-	'Reply-To: '.$emailaddress.'' . "\r\n" .
+	//$headers = 'From: '.$firstname." ".$lastname.'' . "\r\n" .
+	$headers = 'From: Fox & Bear Co. <hello@foxandbearco.com>'. "\r\n" .
+	'Reply-To: hello@foxandbearco.com' . "\r\n" .
 	'X-Mailer: PHP/' . phpversion();
 	
 	$send_mail = mail($to_email, $subject, $message_body, $headers);

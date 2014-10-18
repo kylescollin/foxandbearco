@@ -8,7 +8,8 @@ function updateCartItems(){
 		totalItems += parseInt($(this).val(), 10);
 	});
 	$('#total').html('$' + productTotal.toFixed(2));
-	$('#cart').html('CART - ' + totalItems);
+	$('#cart').html('<img src="images/cart.svg" alt="cart" />' + totalItems);
+	$('#sidecart').html('<img src="images/cart.svg" alt="cart" />' + totalItems);
 }
 
 // Calculates the total price of all items of a single product. 
@@ -52,7 +53,6 @@ function getNumberOfProductTypes(){
 			numberofproducttypes++;
 		}
 	});
-	console.log("Total number of product types: " + numberofproducttypes);
 	return numberofproducttypes;
 }
 
@@ -64,8 +64,32 @@ function resetForm(){
 	$('.selector2').find('span').css('color','#999999');
 }
 
+var temp = false;
 
 $(document).ready(function(){
+	// Mobile Navigation Handler
+	$(".menu-link").click(function(){
+		$("#mobilenav").toggleClass("active");
+		$(".container").toggleClass("active");
+		$(".head").toggleClass("active");
+	});
+	// Close menu if window is resized
+	$(window).resize(function() {
+		if($(window).width() > 768){
+			$("#mobilenav").removeClass("active");
+	    	$(".container").removeClass("active");
+	    	$(".head").removeClass("active");
+		}
+	});
+	// Close side menu if container is clicked when menu is open
+	$('.container, .head, #sidecart').click(function(event){
+		if(!$(event.target).is('div')){
+			$("#mobilenav").removeClass("active");
+	    	$(".container").removeClass("active");
+	    	$(".head").removeClass("active");
+		}
+	});
+
 	// Close any open menus on off click
 	$(document).click(function(event) {
 	    if(!$(event.target).parents('.selector').length) {
@@ -80,7 +104,7 @@ $(document).ready(function(){
 	            $('.selector2').find('ul').css('visibility','hidden');
 	        }
 	    }     
-	})
+	});
 
 	// Handles drop down menus.
 	$('.selector').click(function(event) {
@@ -113,6 +137,21 @@ $(document).ready(function(){
 			openmenu.css('visibility','hidden');
 		}
 	});
+	
+	// Populates Pickup Dates from textfile.
+	var pickupdates = new Array();
+	$.get('pickup.txt', function(data) {
+      	pickupdates = data.split('\n');
+      	var num = pickupdates.length;
+		if(num > 3){
+			num = 3;
+		}
+		var finallist = '';
+		for(var n = 0; n < num; n++){
+		    finallist += '<li>'+pickupdates[n]+'</li>';
+		}
+		$('#pickuptimes').html(finallist);
+    }, 'text');
 
 	// Updates cart when users "add to cart" from the top section
 	$('.flavors').submit(function(){
@@ -127,8 +166,10 @@ $(document).ready(function(){
 			});
 		}, 1500);
 		// Update carts
-		var unit = $(this).find("span").text().replace(/\s+/g, ''); // Get flavor name
-		unit = $(this).attr('name').replace(/\s+/g, '') + "-" + unit; // Combine product name and flavor name
+		var flavorname = $(this).find("span").text().replace(/\s+/g, ''); // Get flavor name
+		var producttype = $(this).attr('name').replace(/\s+/g, ''); // Get product type
+		var unit = producttype + "-" + flavorname; // Combine product type and flavor name
+		ga('send', 'event', 'products - heros', 'add to cart', unit);
 		var num = $('#'+ unit).val();
 		num++;
 		$('#'+ unit).val(num);
@@ -255,8 +296,7 @@ $(document).ready(function(){
 
 			//Ajax post data to server
             $.post('productform.php', post_data, function(response){  
-				if(response.type == 'error'){ //load json data from server and output message 
-					console.log('here');   
+				if(response.type == 'error'){ //load json data from server and output message   
 					$('#formerrors').text(response.text);
 					$('#formerrors').css('display','block');
 				}else{

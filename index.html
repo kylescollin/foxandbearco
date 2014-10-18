@@ -7,11 +7,13 @@
 		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
 		<meta name="description" content="" />
 		<meta name="keywords" content="" />
+		<link rel="icon" type="image/ico" href="favicon.ico">
 		<!-- CSS -->
 		<link rel="stylesheet" href="css/reset.css" />
 		<link rel="stylesheet" href="css/styles.css" />
 		<link rel="stylesheet" href="css/jquery.bxslider.css" />
 		<!-- JS -->
+		<script src="js/ga.js"></script>
 		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
 		<script src="js/jquery.bxslider.min.js"></script>
 		<script src="js/instafeed.js"></script>
@@ -20,11 +22,22 @@
 	</head>
 
 	<body>
+		<nav id="mobilenav">
+			<ul>
+				<li><a href="index.html">Home</a></li>
+				<li><a href="products.html">Products</a></li>
+				<li><a href="about.html">About</a></li>
+				<li><a href="contact.html">Contact</a></li>
+			</ul>
+		</nav>
+
+		<div class="container">
 		<!-- Header -->
 		<section id="intro">
 			<!-- Logo -->
 			<h1 id="logo"><a href="index.html"><img src="images/logo.svg" alt="Fox &amp; Bear Co."></a></h1>
 			<!-- Nav -->
+			<div class="menu-link">☰</div>
 			<nav id="nav">
 				<ul>
 					<li><a href="index.html">Home</a></li>
@@ -49,15 +62,34 @@
 				<li id="promo1">
 					<div class="halfright">
 					<header>
-						<h1>Join our newsletter!</h1>
+						<h1>Join the clubhouse!</h1>
 					</header>
-					<p>Get 10% off your order!</p>
+					<p>Sign up for early access to our next batch of treats.</p>
 					<footer>
-						<a href="#">Sign Up Now ›</a>
+						<a href="#" id="mailsignup">Sign Up Now ›</a>
 					</footer>
 					</div>
+					<div id="newsletterWrapper">
+				        <div id="newsletterSignup">
+				        	<div id="closenewsletter">x</div>
+				            <!-- Begin MailChimp Signup Form -->
+							<div id="mc_embed_signup">
+							<form action="//foxandbearco.us8.list-manage.com/subscribe/post?u=6ff72c86b677c9bc523abdf9a&amp;id=f46a4db88d" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+							    <div id="mc_embed_signup_scroll">
+								<label for="mce-EMAIL">Make it official!</label><br />
+								<input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="email address" required>
+							    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+							    <div style="position: absolute; left: -5000px;"><input type="text" name="b_6ff72c86b677c9bc523abdf9a_f46a4db88d" tabindex="-1" value=""></div>
+							    <div id="legaljargon">We'll never share your information, and you can unsubscribe with a single click at any time.</div>
+							    <div class="clear"><input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button"></div>
+							    </div>
+							</form>
+							</div>
+							<!--End mc_embed_signup-->
+				        </div>
+				    </div>
 				</li>
-				<li id="promo1">
+				<!-- <li id="promo1">
 					<div class="halfright">
 					<header>
 						<h1>Join our newsletter!</h1>
@@ -67,7 +99,7 @@
 						<a href="#">Sign Up Now ›</a>
 					</footer>
 					</div>
-				</li>
+				</li> -->
 			</ul>
 		</section>
 
@@ -116,10 +148,10 @@
 					<h3>Find More</h3>
 				</header>
 				<ul>
-					<li><a href="#">Products</a></li>
-					<li><a href="#">About</a></li>
-					<li><a href="#">Contact</a></li>
-					<li><a href="#">Blog</a></li>
+					<li><a href="index.html">Home</a></li>
+					<li><a href="products.html">Products</a></li>
+					<li><a href="about.html">About</a></li>
+					<li><a href="contact.html">Contact</a></li>
 				</ul>
 			</div>
 			<div class="third">
@@ -133,10 +165,11 @@
 				<header>
 					<h3>Follow</h3>
 				</header>
-				<a href="#"><img src="images/twitter.svg" /></a>
-				<a href="#"><img src="images/instagram.svg" /></a>
+				<a href="https://twitter.com/foxandbearco"><img src="images/twitter.svg" /></a>
+				<a href="http://instagram.com/foxandbearco"><img src="images/instagram.svg" /></a>
 			</div>
 			<div id="legal">©2014 Fox &amp; Bear Company. All rights reserved.</div>
 		</section>
+		</div>
 	</body>
 </html>

@@ -7,22 +7,34 @@
 		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
 		<meta name="description" content="" />
 		<meta name="keywords" content="" />
+		<link rel="icon" type="image/ico" href="favicon.ico">
 		<!-- CSS -->
 		<link rel="stylesheet" href="css/reset.css" />
 		<link rel="stylesheet" href="css/styles.css" />
 		<link rel="stylesheet" href="css/jquery.bxslider.css" />
 		<!-- JS -->
+		<script src="js/ga.js"></script>
 		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
 		<script src="js/jquery.bxslider.min.js"></script>
 		<script src="js/products.js"></script>
 	</head>
 
 	<body>
+		<nav id="mobilenav">
+			<ul>
+				<a href="products.html#purchaseform"><li id="sidecart"><img src="images/cart.svg" alt="cart" /> 0</li></a>
+				<li><a href="index.html">Home</a></li>
+				<li><a href="products.html">Products</a></li>
+				<li><a href="about.html">About</a></li>
+				<li><a href="contact.html">Contact</a></li>
+			</ul>
+		</nav>
 		<!-- Header -->
 		<section class="head">
 			<!-- Logo -->
 			<h1 id="logo"><a href="index.html"><img src="images/logo.svg" alt="Fox &amp; Bear Co."></a></h1>
 			<!-- Nav -->
+			<div class="menu-link">☰</div>
 			<nav id="nav">
 				<ul>
 					<li><a href="index.html">Home</a></li>
@@ -30,9 +42,10 @@
 					<li class="break"><a href="about.html">About</a></li>
 					<li><a href="contact.html">Contact</a></li>
 				</ul>
-				<a href="products.html#orderform"><div id="cart">CART - 0</div></a>
+				<a href="products.html#purchaseform"><div id="cart"><img src="images/cart.svg" alt="cart" />0</div></a>
 			</nav>
 		</section>
+		<div class="container">
 
 		<!-- Product — Pickles -->
 		<section class="product" id="firstproduct">
@@ -70,16 +83,6 @@
 		<!-- Product — Cookies -->
 		<section class="product">
 			<div class="halfleft">
-				<div class="gallery">
-					<ul class="bxslider">
-						<li><img src="images/products/cookies/1.jpg" /></li>
-						<li><img src="images/products/cookies/2.jpg" /></li>
-						<li><img src="images/products/cookies/3.jpg" /></li>
-						<li><img src="images/products/cookies/4.jpg" /></li>
-					</ul>
-				</div>
-			</div>
-			<div class="halfleft2">
 				<div class="copy">
 					<h1>Cookies</h1><h2>$8</h2>
 					<h5>Description</h5>
@@ -97,6 +100,16 @@
 						</ul>
 					<input type="submit" value="Add To Cart">
 					</form>
+				</div>
+			</div>
+			<div class="halfleft2">
+				<div class="gallery">
+					<ul class="bxslider">
+						<li><img src="images/products/cookies/1.jpg" /></li>
+						<li><img src="images/products/cookies/2.jpg" /></li>
+						<li><img src="images/products/cookies/3.jpg" /></li>
+						<li><img src="images/products/cookies/4.jpg" /></li>
+					</ul>
 				</div>
 			</div>
 		</section>
@@ -137,13 +150,6 @@
 		<!-- Product — Bread -->
 		<section class="product">
 			<div class="halfleft">
-				<div class="gallery">
-					<ul class="bxslider">
-						<li><img src="images/products/bread/1.jpg" /></li>
-					</ul>
-				</div>
-			</div>
-			<div class="halfleft2">
 				<div class="copy">
 					<h1>Bread</h1><h2>$7</h2>
 					<h5>Description</h5>
@@ -161,6 +167,13 @@
 						</ul>
 					<input type="submit" value="Add To Cart">
 					</form>
+				</div>
+			</div>
+			<div class="halfleft2">
+				<div class="gallery">
+					<ul class="bxslider">
+						<li><img src="images/products/bread/1.jpg" /></li>
+					</ul>
 				</div>
 			</div>
 		</section>
@@ -222,6 +235,7 @@
 		</section>
 
 		<!-- Order Form -->
+		<span class="anchor" id="purchaseform"></span>
 		<section class="stark">
 			<header>
 				<h1>Order Form</h1>
@@ -270,7 +284,7 @@
 				<div>
 				<ul class="selector2">
 					<li><span>Select Pickup Time / Date</span>
-						<ul>
+						<ul id="pickuptimes">
 							<li>October 17  |  2-4pm  —  28 Havemeyer</li>
 							<li>October 18  |  2-4pm  —  28 Havemeyer</li>
 							<li>October 22  |  2-4pm  —  28 Havemeyer</li>
@@ -293,10 +307,10 @@
 					<h3>Find More</h3>
 				</header>
 				<ul>
-					<li><a href="#">Products</a></li>
-					<li><a href="#">About</a></li>
-					<li><a href="#">Contact</a></li>
-					<li><a href="#">Blog</a></li>
+					<li><a href="index.html">Home</a></li>
+					<li><a href="products.html">Products</a></li>
+					<li><a href="about.html">About</a></li>
+					<li><a href="contact.html">Contact</a></li>
 				</ul>
 			</div>
 			<div class="third">
@@ -310,11 +324,12 @@
 				<header>
 					<h3>Follow</h3>
 				</header>
-				<a href="#"><img src="images/twitter.svg" /></a>
-				<a href="#"><img src="images/instagram.svg" /></a>
+				<a href="https://twitter.com/foxandbearco"><img src="images/twitter.svg" /></a>
+				<a href="http://instagram.com/foxandbearco"><img src="images/instagram.svg" /></a>
 			</div>
 			<div id="legal">©2014 Fox &amp; Bear Company. All rights reserved.</div>
 		</section>
+		</div>
 
 		<!-- Scripts -->
 		<script>

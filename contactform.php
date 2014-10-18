@@ -31,9 +31,6 @@ if($_POST)
 		$output = json_encode(array('type'=>'error', 'text' => 'Don\'t be shy! Write a little more.'));
 		die($output);
 	}
-	
-	//include both email addresses
-	$to_email .= ", ".$emailaddress;
 
 	//email body
 	$message_body = $message;
