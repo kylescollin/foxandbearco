@@ -5,29 +5,71 @@ URL: www.foxandbearco.com
 */
 
 /* ===============================================================
-Master Page Structure & Style
+Embedded Fonts
 ================================================================*/
 @font-face {
-    font-family: 'HoeflerTextItalicCaps';
-    src: url('../fonts/HoeflerText-Italic-SmallCaps.otf');
-}
-@font-face {
-    font-family: 'HoeflerTextAlt';
-    src: url('../fonts/HoeflerText-Roman-Alt.otf');
-}
-@font-face {
-    font-family: 'HoeflerTextRoman';
-    src: url('../fonts/HoeflerText-Roman.otf');
-}
-@font-face {
-    font-family: 'BrandonMedium';
-    src: url('../fonts/Brandon_med.otf');
-}
-@font-face {
-    font-family: 'HoeflerTextItalic';
-    src: url('../fonts/HoeflerText-Italic.otf');
+	font-family: 'HoeflerText-Italic-SmallCaps';
+	src: url('../fonts/HoeflerText-Italic-SmallCaps/HoeflerText-Roman-Alt.eot');
+	src: url('../fonts/HoeflerText-Italic-SmallCaps/HoeflerText-Italic-SmallCaps.eot?#iefix') format('embedded-opentype'),
+		 url('../fonts/HoeflerText-Italic-SmallCaps/HoeflerText-Italic-SmallCaps.otf')  format('opentype'),
+	     url('../fonts/HoeflerText-Italic-SmallCaps/HoeflerText-Italic-SmallCaps.woff') format('woff'),
+	     url('../fonts/HoeflerText-Italic-SmallCaps/HoeflerText-Italic-SmallCaps.ttf')  format('truetype'),
+	     url('../fonts/HoeflerText-Italic-SmallCaps/HoeflerText-Italic-SmallCaps.svg#HoeflerText-Italic-SmallCaps') format('svg');
+	font-weight: normal;
+	font-style: normal;
 }
 
+@font-face {
+	font-family: 'HoeflerText-Roman-Alt';
+	src: url('../fonts/HoeflerText-Roman-Alt/HoeflerText-Roman-Alt.eot');
+	src: url('../fonts/HoeflerText-Roman-Alt/HoeflerText-Roman-Alt.eot?#iefix') format('embedded-opentype'),
+		 url('../fonts/HoeflerText-Roman-Alt/HoeflerText-Roman-Alt.otf')  format('opentype'),
+	     url('../fonts/HoeflerText-Roman-Alt/HoeflerText-Roman-Alt.woff') format('woff'),
+	     url('../fonts/HoeflerText-Roman-Alt/HoeflerText-Roman-Alt.ttf')  format('truetype'),
+	     url('../fonts/HoeflerText-Roman-Alt/HoeflerText-Roman-Alt.svg#HoeflerText-Roman-Alt') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'HoeflerText-Roman';
+	src: url('../fonts/HoeflerText-Roman/HoeflerText-Roman.eot');
+	src: url('../fonts/HoeflerText-Roman/HoeflerText-Roman.eot?#iefix') format('embedded-opentype'),
+		 url('../fonts/HoeflerText-Roman/HoeflerText-Roman.otf')  format('opentype'),
+	     url('../fonts/HoeflerText-Roman/HoeflerText-Roman.woff') format('woff'),
+	     url('../fonts/HoeflerText-Roman/HoeflerText-Roman.ttf')  format('truetype'),
+	     url('../fonts/HoeflerText-Roman/HoeflerText-Roman.svg#HoeflerText-Roman') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'HoeflerText-Italic';
+	src: url('../fonts/HoeflerText-Italic/HoeflerText-Italic.eot');
+	src: url('../fonts/HoeflerText-Italic/HoeflerText-Italic.eot?#iefix') format('embedded-opentype'),
+		 url('../fonts/HoeflerText-Italic/HoeflerText-Italic.otf')  format('opentype'),
+	     url('../fonts/HoeflerText-Italic/HoeflerText-Italic.woff') format('woff'),
+	     url('../fonts/HoeflerText-Italic/HoeflerText-Italic.ttf')  format('truetype'),
+	     url('../fonts/HoeflerText-Italic/HoeflerText-Italic.svg#HoeflerText-Italic') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+	font-family: 'BrandonGrotesque-Medium';
+	src: url('../fonts/BrandonGrotesque-Medium/BrandonGrotesque-Medium.eot');
+	src: url('../fonts/BrandonGrotesque-Medium/BrandonGrotesque-Medium.eot?#iefix') format('embedded-opentype'),
+		 url('../fonts/BrandonGrotesque-Medium/BrandonGrotesque-Medium.otf')  format('opentype'),
+    	 url('../fonts/BrandonGrotesque-Medium/BrandonGrotesque-Medium.woff') format('woff'),
+    	 url('../fonts/BrandonGrotesque-Medium/BrandonGrotesque-Medium.ttf')  format('truetype'),
+    	 url('../fonts/BrandonGrotesque-Medium/BrandonGrotesque-Medium.svg#BrandonGrotesque-Medium') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+/* ===============================================================
+Master Page Structure & Style
+================================================================*/
 input[type=number]::-webkit-inner-spin-button, 
 input[type=number]::-webkit-outer-spin-button { 
 	-webkit-appearance: none; 
@@ -42,10 +84,10 @@ h1,
 h2,
 h3,
 h4 {
-	font-family: "HoeflerTextItalicCaps", Georgia, serif;
+	font-family: "HoeflerText-Italic-SmallCaps", Georgia, serif;
 }
 h1 span {
-	font-family: "HoeflerTextAlt", Georgia, serif;
+	font-family: "HoeflerText-Roman-Alt", Georgia, serif;
 }
 h1,
 h2,
@@ -59,7 +101,7 @@ h4 {
 	font-size: 20pt;
 }
 h5 {
-	font-family: "BrandonMedium", Verdana, sans-serif;
+	font-family: "BrandonGrotesque-Medium", Verdana, Geneva, sans-serif;
 	text-transform: uppercase;
 	letter-spacing: 2px;
 	font-size: 14pt;
@@ -75,14 +117,14 @@ section header {
 	width: 90%;
 }
 section p {
-	font-family: "HoeflerTextRoman", Georgia, serif;
+	font-family: "HoeflerText-Roman", Georgia, serif;
 	font-size: 12pt;
 	line-height: 1.5em;
 	margin: 2em auto 0 auto;
 	width: 90%;
 }
 section footer {
-	font-family: "BrandonMedium", Verdana, sans-serif;
+	font-family: "BrandonGrotesque-Medium", Verdana, Geneva, sans-serif;
 	text-transform: uppercase;
 	letter-spacing: 2px;
 	font-size: 14pt;
@@ -100,7 +142,7 @@ section footer a {
 section footer input {
 	border: 0px;
 	background: none;
-	font-family: "BrandonMedium", Verdana, sans-serif;
+	font-family: "BrandonGrotesque-Medium", Verdana, Geneva, sans-serif;
 	text-transform: uppercase;
 	letter-spacing: 2px;
 	font-size: 14pt;
@@ -202,7 +244,7 @@ Navigation
 }
 #nav {
 	display: none;
-	font-family: "BrandonMedium", Verdana, sans-serif;
+	font-family: "BrandonGrotesque-Medium", Verdana, Geneva, sans-serif;
 	text-transform: uppercase;
 	font-size: 14pt;
 	letter-spacing: 2px;
@@ -293,7 +335,7 @@ Mobile Navigation
         -o-transition: 0.15s ease;
         transition: 0.15s ease;
         background-color: #2c2c2c;
-        font-family: "BrandonMedium", Verdana, sans-serif;
+        font-family: "BrandonGrotesque-Medium", Verdana, Geneva, sans-serif;
 		text-transform: uppercase;
 		font-size: 14pt;
 		letter-spacing: 2px;
@@ -356,651 +398,6 @@ Mobile Navigation
 }
 
 /* ===============================================================
-Homepage Intro
-================================================================*/
-
-#intro {
-	position: relative;
-	margin: 0;
-	background-image: url('../images/header.jpg');
-	background-size: cover;
-	background-position: center center;
-	background-repeat: no-repeat;
-	padding: 6em 20px 4em 20px;
-	color: #fff;
-}
-#tree {
-	margin: 1em auto 0 auto;
-	width: 80px;
-}
-
-/* RESPONSIVE */
-
-@media (min-width: 768px) {
-	#intro {
-		padding: 12em 0 12em 0;
-	}
-	#tree {
-		width: 152px;
-	}
-}
-
-@media (min-width: 992px) {
-	#intro {
-		padding: 12em 0 10em 0;
-	}
-}
-
-
-.description {
-	background-color: #e7e2d3;
-	padding: 6em 0 6em 0;
-}
-
-/* ===============================================================
-Promotion Carousel
-================================================================*/
-.bxslider li {
-
-}
-#promo1 {
-	background-image: url('../images/promo1.jpg');
-	background-size: cover;
-	background-position: center center;
-	background-repeat: no-repeat;
-	color: #fff;
-	padding-top: 5em;
-	padding-bottom: 5em;
-}
-#promo2 {
-	background-image: url('../images/promo2.jpg');
-	background-size: cover;
-	background-position: center center;
-	background-repeat: no-repeat;
-	color: #fff;
-	padding-top: 3.8em;
-	padding-bottom: 3.8em;
-}
-
-/* ===============================================================
-Newsletter Signup
-================================================================*/
-#newsletterWrapper {
-	position: absolute;
-	left: 50%;
-	width: 500px;
-	top: 15%;
-	display: none;
-}
-#newsletterSignup {
-	position: relative;
-	left: -50%;
-	height: 300px;
-	background-color: #333333;
-}
-#closenewsletter {
-	font-family: "BrandonMedium", Verdana, sans-serif;
-	font-size: 20pt;
-	position: absolute;
-	top: 4px;
-	right: 17px;
-}
-#mc_embed_signup_scroll {
-	padding-top: 2em;
-}
-#mc_embed_signup_scroll label {
-	font-family: "HoeflerTextItalic", Georgia, serif;
-	font-size: 18pt;
-}
-#mce-EMAIL {
-	font-family: "HoeflerTextRoman", Georgia, serif;
-	width: 300px;
-	height: 1em;
-	border: none;
-	padding: 1em;
-	margin-top: 1.5em;
-	font-size: 14pt;
-}
-#legaljargon {
-	width: 350px;
-	color: #aaa;
-	margin: 0 auto;
-	line-height: 1.2em;
-	margin-top: 1em;
-}
-#mc-embedded-subscribe{
-	font-family: "BrandonMedium", Verdana, sans-serif;
-	text-transform: uppercase;
-	letter-spacing: 2px;
-	font-size: 14pt;
-	color: #fff;
-	margin: 1.3em auto;
-	border: 1px solid #fff;
-	width: 250px;
-	height: 3em;
-	line-height: 2.5em;
-	clear: both;
-	background-color: #333333;
-}
-
-/* ===============================================================
-Instagram Feed
-================================================================*/
-#instafeed {
-	overflow: hidden;
-}
-#instafeed img {
-	width: 50%;
-}
-@media (min-width: 768px) {
-	#instafeed img {
-		width: 25%;
-	}
-}
-
-/* ===============================================================
-How It Works
-================================================================*/
-.details {
-	background-color: #f2f2f2;
-	padding: 6em 0 6em 0;
-}
-.details img {
-	width: 200px;
-}
-@media (min-width: 768px) {
-	.details img {
-		width: 250px;
-	}
-}
-
-/* ===============================================================
-Google Map
-================================================================*/
-#map {
-	position: relative;
-	overflow-y: hidden;
-}
-#overlay{
-	position:absolute;
-	top:0;
-	left:0;    
-	width:100%;
-	height:100%;
-	background:rgba(0,0,0,.4);
-	z-index: 1;
-}
-#overlay img {
-	width: 50px;
-	height: 100px;
-	position: relative;
-	top: 160px;
-}
-#map_canvas {
-	width: 100%;
-	height: 500px;
-}
-
-/* ===============================================================
-Products
-================================================================*/
-#cart {
-	position: absolute;
-	top: 0px;
-	right: 30px;
-	color: #fff;
-}
-#cart img {
-	width: 40px;
-	height: 40px;
-	left: -5px;
-	top: 10px;
-	position: relative;
-}
-#sidecart {
-	color: #fff;
-}
-#sidecart img {
-	width: 40px;
-	height: 40px;
-	left: -10px;
-	top: 10px;
-	position: relative;
-}
-.product {
-	background-color: #e0ddd7;
-	text-align: left;
-	border-bottom: 2px solid #fff;
-}
-#firstproduct {
-	padding-top: 150px;
-}
-.copy {
-	width: 90%;
-	margin: 5%;
-}
-.halfleft > .gallery {
-	margin: 5% auto;
-	width: 90%;
-}
-.halfleft2 > .gallery {
-	margin: 5% auto;
-	width: 90%;
-}
-.copy > h1 {
-	float: left;
-}
-.copy > h2 {
-	float: right;
-}
-.copy h5 {
-	padding-top: 3em;
-	padding-bottom: 1em;
-	clear: both;
-	float: left;
-}
-.copy > p {
-	width: 100%;
-	font-size: 12pt;
-	line-height: 20pt;
-	clear: both;
-}
-.copy > ul > li {
-	margin-top: 1em;
-}
-.copy input {
-	clear: both;
-	float: left;
-	font-family: "BrandonMedium", Verdana, sans-serif;
-	text-transform: uppercase;
-	letter-spacing: 2px;
-	font-size: 12pt;
-	margin: 2em auto;
-	border: 1px solid;
-	width: 250px;
-	height: 3.5em;
-	line-height: 3em;
-	background-color: #e0ddd7;
-	cursor: pointer;
-	-webkit-appearance: none;
-	-webkit-border-radius: 0px;
-}
-.hiddenFlavor{
-	display: none;
-}
-.gallery {
-	width: 80%;
-	height: 80%;
-	max-width: 800px;
-	margin: 5%;
-}
-.gallery li {
-	margin: 0;
-	padding: 0;
-}
-
-/* RESPONSIVE */
-@media (min-width: 768px) {
-	.copy {
-		width: 80%;
-		margin: 5% 5% 5% 12%;
-	}
-	.halfleft > .gallery {
-		margin-left: 12%;
-	}
-	.halfleft2 > .copy {
-		margin: 5%;
-	}
-}
-
-/* ===============================================================
-Select Menu
-================================================================*/
-.selector {
-	float: left;
-	font-family: "HoeflerTextItalic", Georgia, serif;
-	margin: 2.5em 0em 0em 2em;
-	position: relative;
-	z-index: 999;
-}
-.selector li {
-	width: 180px;
-	padding: 0.9em;
-	font-size: 18px;
-	color: #333333;
-	background: #e0ddd7 url(../images/twirl.svg) 95% center no-repeat;
-	background-size: 15px 10px;
-	border: 1px solid #595959;
-	list-style-type: none;
-} 
-.selector li:hover {
-	background-color: #d1cdc9;
-}
-.selector li ul {
-	visibility: hidden;
-	position: absolute;
-	left: 0;
-	margin-top: 17px;
-}
-.selector li ul li {
-	background: #e0ddd7;
-	border-top: none;
-}
-.selector li ul li:hover {
-}
-
-/* ===============================================================
-Order Form
-================================================================*/
-.anchor{
-  display: block;
-  height: 110px; /*same height as header*/
-  margin-top: -110px; /*same height as header*/
-  visibility: hidden;
-}
-@media (min-width: 768px) {
-	.anchor {
-		height: 135px;
-		margin-top: -135px;
-	}
-}
-
-@media (min-width: 992px) {
-	.anchor {
-		height: 155px;
-		margin-top: -155px;
-	}
-}
-.stark {
-	background-color: #fff;
-	padding: 6em 0 6em 0;
-}
-
-/* RESPONSIVE */
-
-@media (min-width: 768px) {
-	#orderform {
-		width: 90%;
-		margin: 3em auto;
-	}
-}
-
-@media (min-width: 992px) {
-	#orderform {
-		width: 900px;
-		margin: 3em auto;
-		clear: both;
-	}
-}
-.full {
-	width: 100%;
-	border-bottom: 1px solid #9a9a9a;
-	border-right: 1px solid #9a9a9a;
-	margin-top:40px;
-	overflow: auto;
-}
-.numbers li {
-	border-left: 1px solid #9a9a9a;
-	border-top: 1px solid #9a9a9a;
-	box-sizing: border-box;
-	padding: 0.9em 4em 0.9em 0.9em;
-	text-align: left;
-	font-size: 15pt;
-	position: relative;
-}
-.numbers input {
-	position: absolute;
-	float: right;
-	top: 6px;
-	right: 5px;
-	width: 45px;
-	height: 30px;
-	text-align: center;
-	border: 1px solid #c6c5c5;
-	font-size: 15pt;
-	outline: none;
-}
-.numbers li div {
-	float: right;
-}
-.names input {
-	border-right: 0px;
-	border-bottom: 0px;
-	border-left: 1px solid #9a9a9a;
-	border-top: 1px solid #9a9a9a;
-	box-sizing: border-box;
-	text-align: left;
-	width: 50%;
-	padding: 0.9em;
-	height: 60px;
-	font-family: "HoeflerTextRoman", Georgia, serif;
-	font-size: 14pt;
-	float: left;
-}
-.empty {
-	height: 56px;
-}
-.empty2 {
-	display: none;
-}
-@media (min-width: 768px) {
-	.numbers input {
-		height: 35px;
-		width: 50px;
-	}
-	.empty2 {
-		display: block;
-		border-left: 1px solid #9a9a9a;
-		border-bottom: 1px solid #9a9a9a;
-		border-right: 1px solid #9a9a9a;
-		box-sizing: border-box;
-		padding: 0.9em;
-		height: 59px;
-		width: 50%;
-		float: left;
-	}
-}
-.submitbutton {
-	margin-top: 90px;
-	width: 300px;
-}
-#formerrors {
-	display: none;
-	color: #2c2c2c;
-	font-size: 14pt;
-	width: 80%;
-	margin: 40px auto;
-	background: #f2f2f2 url(../images/alert.svg) 2% center no-repeat;
-	background-size: 45px 45px;
-	border: 1px solid #707070;
-	padding: 1.3em;
-	font-family: "BrandonMedium", Verdana, sans-serif;
-	text-transform: uppercase;
-	letter-spacing: 2px;
-	font-size: 10pt;
-}
-
-/* ===============================================================
-Select Menu 2
-================================================================*/
-.selector2 {
-	width: 100%;
-	font-family: "HoeflerTextRoman", Georgia, serif;
-	font-size: 14pt;
-	height: 60px;
-	box-sizing: border-box;
-	z-index: 9999;
-	position: relative;
-	float: left;
-}
-@media (min-width: 768px) {
-	.selector2 {
-		width: 50%;
-	}
-}
-.selector2 li {
-	text-align: left;
-	padding: 1.1em;
-	font-size: 18px;
-	color: #333333;
-	border-left: 1px solid #9a9a9a;
-	border-bottom: 1px solid #9a9a9a;
-	background: url(../images/twirl.svg) 95% center no-repeat;
-	background-size: 15px 10px;
-	list-style-type: none;
-	box-sizing: border-box;
-}
-.selector2 li:hover {
-	background-color: #f2f2f2;
-}
-.selector2 li > span {
-	color: #999999;
-}
-.selector2 li ul {
-	visibility: hidden;
-	position: absolute;
-	left: 0;
-	margin-top: 21px;
-	float: left;
-	z-index: 9999;
-	border-right: 1px solid #9a9a9a;
-	width: 100%;	
-}
-.selector2 li ul li {
-	background: #fff;
-	border-top: none;
-	width: 100%;
-}
-.selector2 li ul li:hover {
-}
-
-/* ===============================================================
-About Intro
-================================================================*/
-
-#aboutus {
-	position: relative;
-	margin: 0;
-	background-image: url('../images/kylejo.jpg');
-	background-size: cover;
-	background-position: top center;
-	background-repeat: no-repeat;
-	padding: 6em 0px 0em 0px;
-	color: #fff;
-}
-#aboutcopy {
-	margin-top: 13em;
-	background-color: rgba(0,0,0,0.4);
-	width: 100%;
-	padding: 1em 0em 1em 0em;
-}
-
-#rightstroke {
-	border-right: 1px solid #fff;
-	margin-bottom: 1em;
-}
-
-@media (min-width: 768px) {
-	#aboutcopy {
-		margin-top: 25em;
-		padding: 3em 0em 3em 0em;
-	}
-	#rightstroke {
-		border-right: 1px solid #fff;
-		margin-bottom: 3em;
-	}
-}
-
-@media (min-width: 992px) {
-	#aboutcopy {
-		margin-top: 35em;
-	}
-}
-
-
-/* ===============================================================
-Contact Us
-================================================================*/
-
-#contactus {
-	padding-top: 8em;
-	background-color: #fff;
-}
-
-@media (min-width: 768px) {
-	#contactus {
-		padding-top: 13em;
-	}
-}
-
-#contactus h4 {
-	margin-top: 1.5em;
-}
-#contactus p {
-	margin-top: 0.5em;
-	line-height: 22pt;
-}
-#contactus img {
-	margin-top: 2.5em;
-	width: 80px;
-	height: 80px;
-}
-#contactdetails {
-	padding-bottom: 7em;
-}
-.detailsleft {
-	font-family: "BrandonMedium", Verdana, sans-serif;
-	text-transform: uppercase;
-	font-size: 12pt;
-	letter-spacing: 2px;
-	width: 40%;
-	box-sizing: border-box;
-	padding: 2em 0em 0em 2em;
-	float: left;
-	text-align: right;
-}
-.detailsright {
-	float: right;
-	width: 60%;
-	box-sizing: border-box;
-	padding: 2em 0em 0em 2em;
-	text-align: left;
-	font-family: "HoeflerTextRoman", Georgia, serif;
-	letter-spacing: 1px;
-}
-.detailsright a {
-	text-decoration: none;
-	color: #333333;
-}
-.full2 {
-	width: 100%;
-	margin-top:40px;
-}
-.full2 textarea {
-	width: 100%;
-	height: 400px;
-	border: 1px solid #9a9a9a;
-	box-sizing: border-box;
-	resize: none;
-	font-family: "HoeflerTextRoman", Georgia, serif;
-	font-size: 14pt;
-	padding: 1em;
-}
-
-/* ===============================================================
-Our Beliefs
-================================================================*/
-
-#beliefs {
-	background-image: url('../images/beliefs.jpg');
-	background-size: cover;
-	background-position: center center;
-	background-repeat: no-repeat;
-	color: #fff;
-	padding: 6em 0em 6em 0em;
-}
-
-/* ===============================================================
 Footer
 ================================================================*/
 .footer {
@@ -1011,7 +408,7 @@ Footer
 }
 .footer ul {
 	margin-top: 2em;
-	font-family: "BrandonMedium", Verdana, sans-serif;
+	font-family: "BrandonGrotesque-Medium", Verdana, Geneva, sans-serif;
 	text-transform: uppercase;
 	font-size: 12pt;
 	letter-spacing: 2px;
@@ -1036,7 +433,7 @@ Footer
 	margin-top: 0.5em;
 }
 #legal {
-	font-family: "HoeflerTextRoman", Georgia, serif;
+	font-family: "HoeflerText-Roman", Georgia, serif;
 	font-size: 8pt;
 	color: #a4a4a4;
 	clear: both;

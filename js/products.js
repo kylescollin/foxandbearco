@@ -1,3 +1,7 @@
+$(document).ready(function(){
+	$('.bxslider').bxSlider();
+});
+
 // Updates the cart icon in the top right.
 // Calculates total items based on numbers product list at the bottom of the page.
 function updateCartItems(){

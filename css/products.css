@@ -1,0 +1,354 @@
+/*
+Title: Fox & Bear Co.
+Author: Kyle Scollin
+URL: www.foxandbearco.com
+*/
+
+/* ===============================================================
+How It Works
+================================================================*/
+.details {
+	background-color: #f2f2f2;
+	padding: 6em 0 6em 0;
+}
+.details img {
+	width: 200px;
+}
+@media (min-width: 768px) {
+	.details img {
+		width: 250px;
+	}
+}
+
+/* ===============================================================
+Products
+================================================================*/
+#cart {
+	position: absolute;
+	top: 0px;
+	right: 30px;
+	color: #fff;
+}
+#cart img {
+	width: 40px;
+	height: 40px;
+	left: -5px;
+	top: 10px;
+	position: relative;
+}
+#sidecart {
+	color: #fff;
+}
+#sidecart img {
+	width: 40px;
+	height: 40px;
+	left: -10px;
+	top: 10px;
+	position: relative;
+}
+.product {
+	background-color: #e0ddd7;
+	text-align: left;
+	border-bottom: 2px solid #fff;
+}
+#firstproduct {
+	padding-top: 150px;
+}
+.copy {
+	width: 90%;
+	margin: 5%;
+}
+.halfleft > .gallery {
+	margin: 5% auto;
+	width: 90%;
+}
+.halfleft2 > .gallery {
+	margin: 5% auto;
+	width: 90%;
+}
+.copy > h1 {
+	float: left;
+}
+.copy > h2 {
+	float: right;
+}
+.copy h5 {
+	padding-top: 3em;
+	padding-bottom: 1em;
+	clear: both;
+	float: left;
+}
+.copy > p {
+	width: 100%;
+	font-size: 12pt;
+	line-height: 20pt;
+	clear: both;
+}
+.copy > ul > li {
+	margin-top: 1em;
+}
+.copy input {
+	clear: both;
+	float: left;
+	font-family: "BrandonGrotesque-Medium", Verdana, Geneva, sans-serif;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+	font-size: 12pt;
+	margin: 2em auto;
+	border: 1px solid;
+	width: 250px;
+	height: 3.5em;
+	line-height: 3em;
+	background-color: #e0ddd7;
+	cursor: pointer;
+	-webkit-appearance: none;
+	-webkit-border-radius: 0px;
+}
+.hiddenFlavor{
+	display: none;
+}
+.gallery {
+	width: 80%;
+	height: 80%;
+	max-width: 800px;
+	margin: 5%;
+}
+.gallery li {
+	margin: 0;
+	padding: 0;
+}
+
+/* RESPONSIVE */
+@media (min-width: 768px) {
+	.copy {
+		width: 80%;
+		margin: 5% 5% 5% 12%;
+	}
+	.halfleft > .gallery {
+		margin-left: 12%;
+	}
+	.halfleft2 > .copy {
+		margin: 5%;
+	}
+}
+
+/* ===============================================================
+Select Menu
+================================================================*/
+.selector {
+	float: left;
+	font-family: "HoeflerText-Italic", Georgia, serif;
+	margin: 2.5em 0em 0em 2em;
+	position: relative;
+	z-index: 999;
+}
+.selector li {
+	width: 180px;
+	padding: 0.9em;
+	font-size: 18px;
+	color: #333333;
+	background: #e0ddd7 url(../images/twirl.svg) 95% center no-repeat;
+	background-size: 15px 10px;
+	border: 1px solid #595959;
+	list-style-type: none;
+} 
+.selector li:hover {
+	background-color: #d1cdc9;
+}
+.selector li ul {
+	visibility: hidden;
+	position: absolute;
+	left: 0;
+	margin-top: 17px;
+}
+.selector li ul li {
+	background: #e0ddd7;
+	border-top: none;
+}
+.selector li ul li:hover {
+}
+
+/* ===============================================================
+Order Form
+================================================================*/
+.anchor{
+  display: block;
+  height: 110px; /*same height as header*/
+  margin-top: -110px; /*same height as header*/
+  visibility: hidden;
+}
+@media (min-width: 768px) {
+	.anchor {
+		height: 135px;
+		margin-top: -135px;
+	}
+}
+
+@media (min-width: 992px) {
+	.anchor {
+		height: 155px;
+		margin-top: -155px;
+	}
+}
+.stark {
+	background-color: #fff;
+	padding: 6em 0 6em 0;
+}
+
+/* RESPONSIVE */
+
+@media (min-width: 768px) {
+	#orderform {
+		width: 90%;
+		margin: 3em auto;
+	}
+}
+
+@media (min-width: 992px) {
+	#orderform {
+		width: 900px;
+		margin: 3em auto;
+		clear: both;
+	}
+}
+.full {
+	width: 100%;
+	border-bottom: 1px solid #9a9a9a;
+	border-right: 1px solid #9a9a9a;
+	margin-top:40px;
+	overflow: auto;
+}
+.numbers li {
+	border-left: 1px solid #9a9a9a;
+	border-top: 1px solid #9a9a9a;
+	box-sizing: border-box;
+	padding: 0.9em 4em 0.9em 0.9em;
+	text-align: left;
+	font-size: 15pt;
+	position: relative;
+}
+.numbers input {
+	position: absolute;
+	float: right;
+	top: 6px;
+	right: 5px;
+	width: 45px;
+	height: 30px;
+	text-align: center;
+	border: 1px solid #c6c5c5;
+	font-size: 15pt;
+	outline: none;
+}
+.numbers li div {
+	float: right;
+}
+.names input {
+	border-right: 0px;
+	border-bottom: 0px;
+	border-left: 1px solid #9a9a9a;
+	border-top: 1px solid #9a9a9a;
+	box-sizing: border-box;
+	text-align: left;
+	width: 50%;
+	padding: 0.9em;
+	height: 60px;
+	font-family: "HoeflerText-Roman", Georgia, serif;
+	font-size: 14pt;
+	float: left;
+}
+.empty {
+	height: 56px;
+}
+.empty2 {
+	display: none;
+}
+@media (min-width: 768px) {
+	.numbers input {
+		height: 35px;
+		width: 50px;
+	}
+	.empty2 {
+		display: block;
+		border-left: 1px solid #9a9a9a;
+		border-bottom: 1px solid #9a9a9a;
+		border-right: 1px solid #9a9a9a;
+		box-sizing: border-box;
+		padding: 0.9em;
+		height: 59px;
+		width: 50%;
+		float: left;
+	}
+}
+.submitbutton {
+	margin-top: 90px;
+	width: 300px;
+}
+#formerrors {
+	display: none;
+	color: #2c2c2c;
+	font-size: 14pt;
+	width: 80%;
+	margin: 40px auto;
+	background: #f2f2f2 url(../images/alert.svg) 2% center no-repeat;
+	background-size: 45px 45px;
+	border: 1px solid #707070;
+	padding: 1.3em;
+	font-family: "BrandonGrotesque-Medium", Verdana, Geneva, sans-serif;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+	font-size: 10pt;
+}
+
+/* ===============================================================
+Select Menu 2
+================================================================*/
+.selector2 {
+	width: 100%;
+	font-family: "HoeflerText-Roman", Georgia, serif;
+	font-size: 14pt;
+	height: 60px;
+	box-sizing: border-box;
+	z-index: 9999;
+	position: relative;
+	float: left;
+}
+@media (min-width: 768px) {
+	.selector2 {
+		width: 50%;
+	}
+}
+.selector2 li {
+	text-align: left;
+	padding: 1.1em;
+	font-size: 18px;
+	color: #333333;
+	border-left: 1px solid #9a9a9a;
+	border-bottom: 1px solid #9a9a9a;
+	background: url(../images/twirl.svg) 95% center no-repeat;
+	background-size: 15px 10px;
+	list-style-type: none;
+	box-sizing: border-box;
+}
+.selector2 li:hover {
+	background-color: #f2f2f2;
+}
+.selector2 li > span {
+	color: #999999;
+}
+.selector2 li ul {
+	visibility: hidden;
+	position: absolute;
+	left: 0;
+	margin-top: 21px;
+	float: left;
+	z-index: 9999;
+	border-right: 1px solid #9a9a9a;
+	width: 100%;	
+}
+.selector2 li ul li {
+	background: #fff;
+	border-top: none;
+	width: 100%;
+}
+.selector2 li ul li:hover {
+}

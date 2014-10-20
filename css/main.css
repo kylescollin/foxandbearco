@@ -1,0 +1,192 @@
+/*
+Title: Fox & Bear Co.
+Author: Kyle Scollin
+URL: www.foxandbearco.com
+*/
+
+/* ===============================================================
+Homepage Intro
+================================================================*/
+#intro {
+	position: relative;
+	margin: 0;
+	background-image: url('../images/header.jpg');
+	background-size: cover;
+	background-position: center center;
+	background-repeat: no-repeat;
+	padding: 6em 20px 4em 20px;
+	color: #fff;
+}
+#tree {
+	margin: 1em auto 0 auto;
+	width: 80px;
+}
+
+/* RESPONSIVE */
+
+@media (min-width: 768px) {
+	#intro {
+		padding: 12em 0 12em 0;
+	}
+	#tree {
+		width: 152px;
+	}
+}
+
+@media (min-width: 992px) {
+	#intro {
+		padding: 12em 0 10em 0;
+	}
+}
+
+/* ===============================================================
+Text Description
+================================================================*/
+.description {
+	background-color: #e7e2d3;
+	padding: 6em 0 6em 0;
+}
+
+/* ===============================================================
+Promotion Carousel
+================================================================*/
+.bxslider li {
+
+}
+#promo1 {
+	background-image: url('../images/promo1.jpg');
+	background-size: cover;
+	background-position: center center;
+	background-repeat: no-repeat;
+	color: #fff;
+	padding-top: 5em;
+	padding-bottom: 5em;
+}
+#promo2 {
+	background-image: url('../images/promo2.jpg');
+	background-size: cover;
+	background-position: center center;
+	background-repeat: no-repeat;
+	color: #fff;
+	padding-top: 3.8em;
+	padding-bottom: 3.8em;
+}
+
+/* ===============================================================
+Newsletter Signup
+================================================================*/
+#newsletterWrapper {
+	position: absolute;
+	left: 50%;
+	width: 500px;
+	top: 15%;
+	display: none;
+}
+#newsletterSignup {
+	position: relative;
+	left: -50%;
+	height: 300px;
+	background-color: #333333;
+}
+#closenewsletter {
+	font-family: "BrandonGrotesque-Medium", Verdana, Geneva, sans-serif;
+	font-size: 20pt;
+	position: absolute;
+	top: 4px;
+	right: 17px;
+}
+#mc_embed_signup_scroll {
+	padding-top: 2em;
+}
+#mc_embed_signup_scroll label {
+	font-family: "HoeflerText-Italic", Georgia, serif;
+	font-size: 18pt;
+}
+#mce-EMAIL {
+	font-family: "HoeflerText-Roman", Georgia, serif;
+	width: 300px;
+	height: 1em;
+	border: none;
+	padding: 1em;
+	margin-top: 1.5em;
+	font-size: 14pt;
+}
+#legaljargon {
+	width: 350px;
+	color: #aaa;
+	margin: 0 auto;
+	line-height: 1.2em;
+	margin-top: 1em;
+}
+#mc-embedded-subscribe{
+	font-family: "BrandonGrotesque-Medium", Verdana, Geneva, sans-serif;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+	font-size: 14pt;
+	color: #fff;
+	margin: 1.3em auto;
+	border: 1px solid #fff;
+	width: 250px;
+	height: 3em;
+	line-height: 2.5em;
+	clear: both;
+	background-color: #333333;
+}
+
+/* ===============================================================
+Instagram Feed
+================================================================*/
+#instafeed {
+	overflow: hidden;
+}
+#instafeed img {
+	width: 50%;
+}
+@media (min-width: 768px) {
+	#instafeed img {
+		width: 25%;
+	}
+}
+
+/* ===============================================================
+How It Works
+================================================================*/
+.details {
+	background-color: #f2f2f2;
+	padding: 6em 0 6em 0;
+}
+.details img {
+	width: 200px;
+}
+@media (min-width: 768px) {
+	.details img {
+		width: 250px;
+	}
+}
+
+/* ===============================================================
+Google Map
+================================================================*/
+#map {
+	position: relative;
+	overflow-y: hidden;
+}
+#overlay{
+	position:absolute;
+	top:0;
+	left:0;    
+	width:100%;
+	height:100%;
+	background:rgba(0,0,0,.4);
+	z-index: 1;
+}
+#overlay img {
+	width: 50px;
+	height: 100px;
+	position: relative;
+	top: 160px;
+}
+#map_canvas {
+	width: 100%;
+	height: 500px;
+}

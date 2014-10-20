@@ -1,0 +1,69 @@
+/*
+Title: Fox & Bear Co.
+Author: Kyle Scollin
+URL: www.foxandbearco.com
+*/
+
+/* ===============================================================
+About Intro
+================================================================*/
+
+#aboutus {
+	position: relative;
+	margin: 0;
+	background-image: url('../images/kylejo.jpg');
+	background-size: cover;
+	background-position: top center;
+	background-repeat: no-repeat;
+	padding: 6em 0px 0em 0px;
+	color: #fff;
+}
+#aboutcopy {
+	margin-top: 13em;
+	background-color: rgba(0,0,0,0.4);
+	width: 100%;
+	padding: 1em 0em 1em 0em;
+}
+
+#rightstroke {
+	border-right: 1px solid #fff;
+	margin-bottom: 1em;
+}
+
+@media (min-width: 768px) {
+	#aboutcopy {
+		margin-top: 25em;
+		padding: 3em 0em 3em 0em;
+	}
+	#rightstroke {
+		border-right: 1px solid #fff;
+		margin-bottom: 3em;
+	}
+}
+
+@media (min-width: 992px) {
+	#aboutcopy {
+		margin-top: 35em;
+	}
+}
+
+/* ===============================================================
+Text Description
+================================================================*/
+.description {
+	background-color: #e7e2d3;
+	padding: 6em 0 6em 0;
+}
+
+/* ===============================================================
+Our Beliefs
+================================================================*/
+
+#beliefs {
+	background-image: url('../images/beliefs.jpg');
+	background-size: cover;
+	background-position: center center;
+	background-repeat: no-repeat;
+	color: #fff;
+	padding: 6em 0em 6em 0em;
+}
