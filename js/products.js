@@ -140,14 +140,35 @@ $(document).ready(function(){
 	
 	// Populates Pickup Dates from textfile.
 	var pickupdates = new Array();
+	var tempdate = new Array();
+	var tempdatedetails = new Array();
+
+	var today = new Date();
+	var dd = today.getDate();
+	var mm = today.getMonth(); //January is 0!
+	var yyyy = today.getFullYear();
+	var months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+
+	var dateindex = 0;
+
 	$.get('pickup.txt', function(data) {
       	pickupdates = data.split('\n');
-      	var num = pickupdates.length;
-		if(num > 3){
-			num = 3;
+      	for(var i=0; i<pickupdates.length; i++){
+      		tempdate = pickupdates[i].split('  |  ');
+      		tempdatedetails = tempdate[0].split(' ');
+      		if((mm == months.indexOf(tempdatedetails[0]) && dd+1 >= tempdatedetails[1]) || (mm > months.indexOf(tempdatedetails[0]))){
+      			console.log(mm + " - " + months.indexOf(tempdatedetails[0]));
+      			dateindex++;
+      		}
+      	}
+		var num = dateindex + 3;
+		if(pickupdates.length - dateindex < 3){
+			num = pickupdates.length - dateindex;
+			console.log(pickupdates.length);
+			console.log(dateindex);
 		}
 		var finallist = '';
-		for(var n = 0; n < num; n++){
+		for(var n = dateindex; n < num; n++){
 		    finallist += '<li>'+pickupdates[n]+'</li>';
 		}
 		$('#pickuptimes').html(finallist);

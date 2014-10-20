@@ -1,5 +1,7 @@
 $(document).ready(function(){
-	$('.bxslider').bxSlider();
+	$('.bxslider').bxSlider({
+		adaptiveHeight: true
+	});
 });
 
 var feed = new Instafeed({

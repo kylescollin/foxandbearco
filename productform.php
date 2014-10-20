@@ -65,7 +65,7 @@ if($_POST)
 	$message_body .= "Thank you for placing your order at Fox & Bear Co.\r\n";
 	$message_body .= "Your order has been received and we’re warming up our kitchen now.\r\n\r\n";
 
-	$message_body .= "Please review your order below and the pick up time you selected. If you have any questions or need to change your pick up time, please don’t hesitate to email us at hello@foxandbearco.com or call us at 707-234-5058.\r\n\r\n";
+	$message_body .= "Please review your order below and the pick up time you selected. If you have any questions or need to change your pick up time, please don’t hesitate to email us at hello@foxandbearco.com or call us at 347.746.5896.\r\n\r\n";
 
 	$message_body .= "Sold to:\r\n";
 	$message_body .= $firstname." ".$lastname."\r\n";
@@ -75,7 +75,11 @@ if($_POST)
 	}
 	$message_body .= "\r\n";
 
-	$message_body .= "We’re excited to see you on Sunday, ".$pickuptime." St.\r\n\r\n";
+	//separate pickup time string
+	list($date, $timelocation) = explode('  |  ', $pickuptime);
+	list($time, $location) = explode('  —  ', $timelocation);
+
+	$message_body .= "We’re excited to see you on Sunday, ".$date." between ".$time." at ".$location." St. in Williamsburg\r\n\r\n";
 
 	$message_body .= "Order summary:\r\n";
 	if($PicklesGarlic>0){

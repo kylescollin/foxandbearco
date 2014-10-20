@@ -401,8 +401,7 @@ Homepage Intro
 Promotion Carousel
 ================================================================*/
 .bxslider li {
-	padding-top: 5em;
-	padding-bottom: 5em;
+
 }
 #promo1 {
 	background-image: url('../images/promo1.jpg');
@@ -410,6 +409,17 @@ Promotion Carousel
 	background-position: center center;
 	background-repeat: no-repeat;
 	color: #fff;
+	padding-top: 5em;
+	padding-bottom: 5em;
+}
+#promo2 {
+	background-image: url('../images/promo2.jpg');
+	background-size: cover;
+	background-position: center center;
+	background-repeat: no-repeat;
+	color: #fff;
+	padding-top: 3.8em;
+	padding-bottom: 3.8em;
 }
 
 /* ===============================================================
